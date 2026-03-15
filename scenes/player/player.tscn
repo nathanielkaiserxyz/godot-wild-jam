@@ -27,3 +27,6 @@ shape = SubResource("RectangleShape2D_lvxji")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=2110100891]
 sprite_frames = SubResource("SpriteFrames_p47bc")
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=1654703418]
+zoom = Vector2(0.5, 0.5)

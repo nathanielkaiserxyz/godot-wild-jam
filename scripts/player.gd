@@ -1,12 +1,27 @@
 extends CharacterBody2D
 
 @export var speed: float = 300.0
+@export var dash_speed: float = 900.0
+@export var dash_duration: float = 0.2
 
-func _physics_process(_delta):
-	var direction = Vector2.ZERO
+var is_dashing: bool = false
+var dash_direction: Vector2 = Vector2.ZERO
 
-	direction.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
-	direction.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
+func _physics_process(delta):
+	if is_dashing:
+		velocity = dash_direction * dash_speed
+	else:
+		var direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+		velocity = direction * speed
 
-	direction = direction.normalized()
+		if Input.is_action_just_pressed("ui_select") and direction != Vector2.ZERO:
+			start_dash(direction)
+
 	move_and_slide()
+
+func start_dash(dir):
+	is_dashing = true
+	dash_direction = dir
+	
+	await get_tree().create_timer(dash_duration).timeout
+	is_dashing = false

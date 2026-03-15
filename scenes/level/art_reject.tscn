@@ -1,3 +1,13 @@
 [gd_scene format=3 uid="uid://b74fr4354t5e8"]
 
+[ext_resource type="PackedScene" uid="uid://b156telh6bhwe" path="res://scenes/player/player.tscn" id="1_3f7yb"]
+[ext_resource type="Texture2D" uid="uid://dnj26fyxpm43b" path="res://assets/player/player.png" id="2_gclxb"]
+
 [node name="ArtReject" type="Node2D" unique_id=225717566]
+
+[node name="Player" parent="." unique_id=1453906378 instance=ExtResource("1_3f7yb")]
+position = Vector2(191, 189)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1833314472]
+scale = Vector2(22.136974, 0.62648565)
+texture = ExtResource("2_gclxb")
