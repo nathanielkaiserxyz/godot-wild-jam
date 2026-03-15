@@ -14,18 +14,24 @@ func _physics_process(delta):
 	else:
 		var direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 		velocity = direction * speed
+
 		if direction != Vector2.ZERO:
 			if abs(direction.x) > abs(direction.y):
+				player.play("run")
+
 				if direction.x > 0:
-					player.play("run")
+					player.flip_h = false
 				else:
-					player.play("run")
-					player.flip_h
+					player.flip_h = true
+
 			else:
 				if direction.y > 0:
-					player.play("down")
+					player.play("done")
 				else:
 					player.play("up")
+		else:
+			player.play("idle")
+
 		if Input.is_action_just_pressed("ui_select") and direction != Vector2.ZERO:
 			start_dash(direction)
 
