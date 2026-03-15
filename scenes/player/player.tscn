@@ -19,14 +19,14 @@ animations = [{
 
 [node name="Player" type="Node2D" unique_id=1453906378]
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=507444044]
+[node name="Player" type="CharacterBody2D" parent="." unique_id=507444044]
 script = ExtResource("1_dovo2")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=716539908]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=716539908]
 shape = SubResource("RectangleShape2D_lvxji")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=2110100891]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player" unique_id=2110100891]
 sprite_frames = SubResource("SpriteFrames_p47bc")
 
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=1654703418]
-zoom = Vector2(0.5, 0.5)
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1654703418]
+zoom = Vector2(0.8, 0.8)

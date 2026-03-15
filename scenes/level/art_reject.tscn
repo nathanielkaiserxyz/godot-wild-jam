@@ -1,13 +1,62 @@
 [gd_scene format=3 uid="uid://b74fr4354t5e8"]
 
 [ext_resource type="PackedScene" uid="uid://b156telh6bhwe" path="res://scenes/player/player.tscn" id="1_3f7yb"]
-[ext_resource type="Texture2D" uid="uid://dnj26fyxpm43b" path="res://assets/player/player.png" id="2_gclxb"]
+[ext_resource type="Script" uid="uid://dn4yc6oxu7n6t" path="res://scripts/easel.gd" id="2_5l45i"]
+[ext_resource type="Texture2D" uid="uid://l41f3m10bi2e" path="res://assets/world/easel.png" id="2_gclxb"]
+[ext_resource type="Script" uid="uid://bx0ku7dpnsf05" path="res://scripts/drawing_ui.gd" id="4_s522x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gclxb"]
+size = Vector2(39, 37)
 
 [node name="ArtReject" type="Node2D" unique_id=225717566]
 
 [node name="Player" parent="." unique_id=1453906378 instance=ExtResource("1_3f7yb")]
 position = Vector2(191, 189)
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1833314472]
-scale = Vector2(22.136974, 0.62648565)
+[node name="Area2D" type="Area2D" parent="." unique_id=1420443429]
+script = ExtResource("2_5l45i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1118662099]
+visibility_layer = 2
+position = Vector2(188.5, 18.5)
+shape = SubResource("RectangleShape2D_gclxb")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=378053745]
+position = Vector2(190, 17)
 texture = ExtResource("2_gclxb")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1006321302]
+layer = 2
+
+[node name="Drawing_UI" type="Control" parent="CanvasLayer" unique_id=207785635]
+process_mode = 3
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("4_s522x")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Drawing_UI" unique_id=697614881]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 34.0
+offset_right = 51.0
+offset_bottom = 74.0
+scale = Vector2(7.707457, 7.2177525)
+mouse_filter = 2
+
+[node name="Button" type="Button" parent="CanvasLayer/Drawing_UI" unique_id=1502694325]
+layout_mode = 0
+offset_left = 346.0
+offset_top = 291.0
+offset_right = 394.0
+offset_bottom = 322.0
+text = "close"
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
+[connection signal="pressed" from="CanvasLayer/Drawing_UI/Button" to="CanvasLayer/Drawing_UI" method="_on_button_pressed"]
