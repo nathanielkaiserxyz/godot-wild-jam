@@ -1,1 +1,12 @@
-extends Node2D
+extends CharacterBody2D
+
+@export var speed: float = 300.0
+
+func _physics_process(_delta):
+	var direction = Vector2.ZERO
+
+	direction.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
+	direction.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
+
+	direction = direction.normalized()
+	move_and_slide()
