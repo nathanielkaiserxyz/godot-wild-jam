@@ -33,7 +33,12 @@ func _on_submit_museum_pressed() -> void:
 	viewport.size = Vector2i(64, 64)
 	viewport.render_target_update_mode = SubViewport.UPDATE_ONCE
 	add_child(viewport)
-
+	
+	var bg = ColorRect.new()
+	bg.size = Vector2(64, 64)
+	bg.color = Color.WHITE
+	viewport.add_child(bg)
+	
 	for child in get_children():
 		if child is Line2D:
 			var copy = child.duplicate()
@@ -54,4 +59,13 @@ func _on_submit_museum_pressed() -> void:
 	get_node("../../leave").visible = true
 	
 	# newspaper animation
+	var newspaper = get_node("../../newspaper")
+	var final_top = newspaper.offset_top
+	get_node("../../newspaper/drawing").texture = Gamemanager.player_drawing_one
 	
+	newspaper.visible = true
+	newspaper.offset_top = -200
+	var tween = create_tween()
+	tween.tween_property(newspaper, "offset_top", final_top, 0.4)\
+		.set_trans(Tween.TRANS_BOUNCE)\
+		.set_ease(Tween.EASE_OUT)

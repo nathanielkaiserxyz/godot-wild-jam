@@ -3,8 +3,10 @@
 [ext_resource type="PackedScene" uid="uid://b156telh6bhwe" path="res://scenes/player/player.tscn" id="1_3f7yb"]
 [ext_resource type="Script" uid="uid://dn4yc6oxu7n6t" path="res://scripts/easel.gd" id="2_5l45i"]
 [ext_resource type="Texture2D" uid="uid://l41f3m10bi2e" path="res://assets/world/easel.png" id="2_gclxb"]
+[ext_resource type="Theme" uid="uid://cimflqbn2rxdd" path="res://assets/world/newspaper_text_theme.tres" id="3_1rs3f"]
 [ext_resource type="Script" uid="uid://bx0ku7dpnsf05" path="res://scripts/drawing_ui.gd" id="4_s522x"]
 [ext_resource type="Texture2D" uid="uid://l207jfbf1eso" path="res://assets/world/test.png" id="5_g1jfk"]
+[ext_resource type="Texture2D" uid="uid://c3306nog2ded0" path="res://assets/world/newspaper..png" id="5_gotkp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gclxb"]
 size = Vector2(39, 37)
@@ -16,6 +18,50 @@ size = Vector2(32, 31)
 
 [node name="Player" parent="." unique_id=1453906378 instance=ExtResource("1_3f7yb")]
 position = Vector2(191, 189)
+
+[node name="newspaper" type="TextureRect" parent="." unique_id=304503063]
+visible = false
+top_level = true
+offset_left = 89.0
+offset_top = -91.0
+offset_right = 217.0
+offset_bottom = 37.0
+scale = Vector2(1.5769805, 1.668414)
+texture = ExtResource("5_gotkp")
+stretch_mode = 2
+
+[node name="close_paper" type="Button" parent="newspaper" unique_id=105866658]
+layout_mode = 0
+offset_left = 140.77536
+offset_top = 97.69757
+offset_right = 190.77536
+offset_bottom = 128.69757
+text = "Close"
+
+[node name="headline" type="Label" parent="newspaper" unique_id=1116955599]
+layout_mode = 0
+offset_left = 47.559242
+offset_top = 5.9937162
+offset_right = 116.55924
+offset_bottom = 28.993717
+theme = ExtResource("3_1rs3f")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "breaking"
+
+[node name="body" type="Label" parent="newspaper" unique_id=1776943499]
+layout_mode = 0
+offset_left = 12.682465
+offset_top = 37.16104
+offset_right = 112.682465
+offset_bottom = 60.16104
+theme = ExtResource("3_1rs3f")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 4
+text = "Local art dealer rips off artist in stunning maneuver"
+
+[node name="drawing" type="Sprite2D" parent="newspaper" unique_id=1675227895]
+position = Vector2(22.194315, 19.179892)
+scale = Vector2(0.5, 0.5)
 
 [node name="easel" type="Area2D" parent="." unique_id=1420443429]
 script = ExtResource("2_5l45i")
@@ -80,6 +126,7 @@ shape = SubResource("RectangleShape2D_gotkp")
 [node name="Sprite2D" type="Sprite2D" parent="leave" unique_id=103259337]
 texture = ExtResource("5_g1jfk")
 
+[connection signal="pressed" from="newspaper/close_paper" to="easel" method="_on_close_paper_pressed"]
 [connection signal="body_entered" from="easel" to="easel" method="_on_body_entered"]
 [connection signal="body_exited" from="easel" to="easel" method="_on_body_exited"]
 [connection signal="pressed" from="CanvasLayer/Drawing_UI/close_button" to="CanvasLayer/Drawing_UI" method="_on_close_button_pressed"]

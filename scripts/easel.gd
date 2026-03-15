@@ -21,5 +21,8 @@ func open_drawing_screen():
 	get_tree().paused = true 
 
 func _on_leave_body_entered(_body: Node2D) -> void:
-	print("there")
-	Gamemanager.load_level(1)
+	if get_node("../leave").visible == true:
+		Gamemanager.load_level(1)
+		
+func _on_close_paper_pressed() -> void:
+	get_node("../newspaper").visible = false
