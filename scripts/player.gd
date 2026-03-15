@@ -8,7 +8,7 @@ var is_dashing: bool = false
 var dash_direction: Vector2 = Vector2.ZERO
 @onready var player = $AnimatedSprite2D 
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if is_dashing:
 		velocity = dash_direction * dash_speed
 	else:
