@@ -1,3 +1,10 @@
 [gd_scene format=3 uid="uid://dq0ofjtyapgxo"]
 
 [node name="MainMenu" type="Node2D" unique_id=2027672176]
+
+[node name="Button" type="Button" parent="." unique_id=1527994877]
+offset_left = 80.0
+offset_top = 122.0
+offset_right = 176.0
+offset_bottom = 153.0
+text = "Start Game"
