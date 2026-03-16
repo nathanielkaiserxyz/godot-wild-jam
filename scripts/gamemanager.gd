@@ -5,7 +5,8 @@ var player_drawing_one: ImageTexture
 var levels = [
 	"res://scenes/level/art_reject.tscn",
 	"res://scenes/level/world.tscn",
-	"res://scenes/level/floor_two.tscn"
+	"res://scenes/level/floor_two.tscn",
+	"res://scenes/level/options.tscn",
 ]
 
 func load_level(index: int):
