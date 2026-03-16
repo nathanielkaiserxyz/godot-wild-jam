@@ -40,6 +40,15 @@ func _physics_process(_delta):
 func start_dash(dir):
 	is_dashing = true
 	dash_direction = dir
-	
-	await get_tree().create_timer(dash_duration).timeout
+
+	if abs(dir.x) > abs(dir.y):
+		player.play("flip_sideways")
+		player.flip_h = dir.x <= 0
+	else:
+		if dir.y > 0:
+			player.play("flip_down")
+		else:
+			player.play("flip_up")
+			
+	await player.animation_finished
 	is_dashing = false
