@@ -1,6 +1,7 @@
 extends Area2D
 
 var player_in_range: bool = false
+var already_sold: bool = false
 @export var drawing_screen_path: NodePath 
 
 func _on_body_entered(body):
@@ -12,8 +13,12 @@ func _on_body_exited(body):
 		player_in_range = false
 
 func _process(_delta):
-	if player_in_range and Input.is_action_just_pressed("interact"):
+	if player_in_range and Input.is_action_just_pressed("interact") and !already_sold:
+		already_sold = true
 		open_drawing_screen()
+	elif already_sold:
+		pass
+		#display 'I should get them back' or something
 
 func open_drawing_screen():
 	var ui = get_node("../CanvasLayer/Drawing_UI")

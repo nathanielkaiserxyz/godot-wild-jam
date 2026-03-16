@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dnj26fyxpm43b" path="res://assets/player/player.png" id="2_gmlin"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lvxji"]
-size = Vector2(30, 30)
+size = Vector2(14, 15)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dovo2"]
 atlas = ExtResource("2_gmlin")
@@ -285,10 +285,12 @@ animations = [{
 [node name="Player" type="Node2D" unique_id=1453906378]
 
 [node name="Player" type="CharacterBody2D" parent="." unique_id=507444044]
-position = Vector2(-3, 0)
+z_index = 1
 script = ExtResource("1_dovo2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=716539908]
+z_index = 2
+position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_lvxji")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player" unique_id=2110100891]
