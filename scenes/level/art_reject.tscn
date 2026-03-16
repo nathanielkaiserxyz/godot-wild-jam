@@ -6,7 +6,7 @@
 [ext_resource type="Theme" uid="uid://cimflqbn2rxdd" path="res://assets/world/newspaper_text_theme.tres" id="3_1rs3f"]
 [ext_resource type="Script" uid="uid://bx0ku7dpnsf05" path="res://scripts/drawing_ui.gd" id="4_s522x"]
 [ext_resource type="Texture2D" uid="uid://l207jfbf1eso" path="res://assets/world/test.png" id="5_g1jfk"]
-[ext_resource type="Texture2D" uid="uid://c3306nog2ded0" path="res://assets/world/newspaper..png" id="5_gotkp"]
+[ext_resource type="Texture2D" uid="uid://c3306nog2ded0" path="res://assets/world/newspaper.png" id="5_gotkp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gclxb"]
 size = Vector2(39, 37)
@@ -40,13 +40,13 @@ text = "Close"
 
 [node name="headline" type="Label" parent="newspaper" unique_id=1116955599]
 layout_mode = 0
-offset_left = 47.559242
-offset_top = 5.9937162
-offset_right = 116.55924
-offset_bottom = 28.993717
+offset_left = 43.120377
+offset_top = 7.1924605
+offset_right = 112.12038
+offset_bottom = 30.192465
 theme = ExtResource("3_1rs3f")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "breaking"
+text = "0.01$"
 
 [node name="body" type="Label" parent="newspaper" unique_id=1776943499]
 layout_mode = 0
@@ -56,8 +56,10 @@ offset_right = 112.682465
 offset_bottom = 60.16104
 theme = ExtResource("3_1rs3f")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 4
-text = "Local art dealer rips off artist in stunning maneuver"
+theme_override_font_sizes/font_size = 16
+text = "Good luck 
+paying your 
+bills asshole"
 
 [node name="drawing" type="Sprite2D" parent="newspaper" unique_id=1675227895]
 position = Vector2(22.194315, 19.179892)
@@ -113,7 +115,7 @@ offset_left = 346.0
 offset_top = 251.0
 offset_right = 505.0
 offset_bottom = 282.0
-text = "give to art museum"
+text = "Sell your masterpiece to the museum"
 
 [node name="leave" type="Area2D" parent="." unique_id=110879393]
 visible = false
