@@ -1,5 +1,7 @@
 extends Node
 
+var player_drawing_one: ImageTexture 
+
 var levels = [
 	"res://scenes/level/art_reject.tscn",
 	"res://scenes/level/world.tscn",
@@ -8,6 +10,4 @@ var levels = [
 
 func load_level(index: int):
 	if index < levels.size():
-		get_tree().change_scene_to_file(levels[index])
-	else:
-		print("You beat the game!")
+		get_tree().call_deferred("change_scene_to_file", levels[index])

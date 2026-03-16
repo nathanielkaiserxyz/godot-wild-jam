@@ -19,3 +19,10 @@ func open_drawing_screen():
 	var ui = get_node("../CanvasLayer/Drawing_UI")
 	ui.visible = true
 	get_tree().paused = true 
+
+func _on_leave_body_entered(_body: Node2D) -> void:
+	if get_node("../leave").visible == true:
+		Gamemanager.load_level(1)
+		
+func _on_close_paper_pressed() -> void:
+	get_node("../newspaper").visible = false

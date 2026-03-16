@@ -22,6 +22,14 @@ region = Rect2(32, 0, 16, 16)
 atlas = ExtResource("2_gmlin")
 region = Rect2(48, 0, 16, 16)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ugbui"]
+atlas = ExtResource("2_gmlin")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fcs02"]
+atlas = ExtResource("2_gmlin")
+region = Rect2(0, 0, 16, 16)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_75vfm"]
 atlas = ExtResource("2_gmlin")
 region = Rect2(64, 0, 16, 16)
@@ -70,7 +78,18 @@ animations = [{
 "texture": SubResource("AtlasTexture_p47bc")
 }],
 "loop": true,
-"name": &"down ",
+"name": &"done",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ugbui")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fcs02")
+}],
+"loop": true,
+"name": &"idle",
 "speed": 5.0
 }, {
 "frames": [{
@@ -118,7 +137,7 @@ shape = SubResource("RectangleShape2D_lvxji")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player" unique_id=2110100891]
 sprite_frames = SubResource("SpriteFrames_p47bc")
-animation = &"down "
+animation = &"done"
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1654703418]
 zoom = Vector2(0.8, 0.8)
