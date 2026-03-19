@@ -78,7 +78,7 @@ interact={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://dialogue/first-room.dialogue")
+locale/translations_pot_files=PackedStringArray("res://dialogue/first-room.dialogue", "res://dialogue/get-them-back.dialogue", "res://dialogue/guard_outside_museum.dialogue")
 
 [physics]
 

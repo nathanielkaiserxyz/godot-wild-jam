@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://c8x3765nwbq0c"
+path="res://.godot/imported/guard_outside_museum.dialogue-45cece871c05380c138fd8c027462e74.tres"
+
+[deps]
+
+source_file="res://dialogue/guard_outside_museum.dialogue"
+dest_files=["res://.godot/imported/guard_outside_museum.dialogue-45cece871c05380c138fd8c027462e74.tres"]
+
+[params]
+
+defaults=true

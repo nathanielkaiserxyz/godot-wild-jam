@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://wob518n64ad4"]
+
+[ext_resource type="Script" uid="uid://bg1s8lq3pwtu8" path="res://scripts/fat_guard.gd" id="1_b1otb"]
+[ext_resource type="Texture2D" uid="uid://cm18tql2cxfcy" path="res://assets/mobs/fat_guard.png" id="1_etyf1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b1otb"]
+size = Vector2(24, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_feq07"]
+atlas = ExtResource("1_etyf1")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gifwn"]
+atlas = ExtResource("1_etyf1")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3fb40"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_feq07")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gifwn")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 1.0
+}]
+
+[node name="FatGuard" type="Node2D" unique_id=1527901689]
+
+[node name="fat_guard" type="Area2D" parent="." unique_id=754532954]
+script = ExtResource("1_b1otb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="fat_guard" unique_id=858139801]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_b1otb")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="fat_guard" unique_id=675733260]
+sprite_frames = SubResource("SpriteFrames_3fb40")
+animation = &"idle"
+
+[connection signal="body_entered" from="fat_guard" to="fat_guard" method="_on_body_entered"]
+[connection signal="body_exited" from="fat_guard" to="fat_guard" method="_on_body_exited"]

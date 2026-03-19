@@ -4,6 +4,8 @@ extends CharacterBody2D
 @export var dash_speed: float = 300.0
 @export var dash_duration: float = 0.2
 
+
+
 var is_dashing: bool = false
 var dash_direction: Vector2 = Vector2.ZERO
 @onready var player = $AnimatedSprite2D 
@@ -13,8 +15,11 @@ func _physics_process(_delta):
 		velocity = dash_direction * dash_speed
 	else:
 		var direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
-		velocity = direction * speed
-
+		if Gamemanager.player_movable == true:	
+			velocity = direction * speed
+		else:
+			velocity = direction * 0
+		
 		if direction != Vector2.ZERO:
 			if abs(direction.x) > abs(direction.y):
 				player.play("run")

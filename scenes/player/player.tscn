@@ -295,7 +295,7 @@ shape = SubResource("RectangleShape2D_lvxji")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player" unique_id=2110100891]
 sprite_frames = SubResource("SpriteFrames_p47bc")
-animation = &"flip_up"
+animation = &"flip_sideways"
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1654703418]
 position_smoothing_enabled = true

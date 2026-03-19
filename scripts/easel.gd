@@ -13,8 +13,8 @@ func _on_body_exited(body):
 		player_in_range = false
 
 func _process(_delta):
+	already_sold = Gamemanager.already_sold_painting_to_museum
 	if player_in_range and Input.is_action_just_pressed("interact") and !already_sold:
-		already_sold = true
 		open_drawing_screen()
 	elif already_sold:
 		pass

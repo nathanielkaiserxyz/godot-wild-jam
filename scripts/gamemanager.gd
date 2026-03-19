@@ -1,5 +1,8 @@
 extends Node
 
+@export var already_sold_painting_to_museum : bool = false
+@export var player_movable: bool = true
+
 var player_drawing_one: ImageTexture 
 
 var levels = [

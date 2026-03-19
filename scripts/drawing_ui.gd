@@ -29,6 +29,7 @@ func _on_close_button_pressed() -> void:
 	get_tree().paused = false
 
 func _on_submit_museum_pressed() -> void:
+	Gamemanager.already_sold_painting_to_museum = true
 	var viewport = SubViewport.new()
 	viewport.size = Vector2i(64, 64)
 	viewport.render_target_update_mode = SubViewport.UPDATE_ONCE
