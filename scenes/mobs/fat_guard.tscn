@@ -34,6 +34,7 @@ size = Vector2(13, 15)
 [node name="FatGuard" type="Node2D" unique_id=1527901689]
 
 [node name="fat_guard" type="Area2D" parent="." unique_id=754532954]
+z_index = 1
 script = ExtResource("1_b1otb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="fat_guard" unique_id=858139801]
