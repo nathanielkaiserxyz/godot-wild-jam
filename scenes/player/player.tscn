@@ -298,6 +298,7 @@ sprite_frames = SubResource("SpriteFrames_p47bc")
 animation = &"flip_sideways"
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1654703418]
+zoom = Vector2(2, 2)
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 drag_horizontal_enabled = true
