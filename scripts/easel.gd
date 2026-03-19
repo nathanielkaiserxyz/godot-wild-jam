@@ -31,3 +31,7 @@ func _on_leave_body_entered(_body: Node2D) -> void:
 		
 func _on_close_paper_pressed() -> void:
 	get_node("../newspaper").visible = false
+	Gamemanager.player_movable = false
+	DialogueManager.show_example_dialogue_balloon(load("res://dialogue/closednewspaper.dialogue"), "start")
+	await DialogueManager.dialogue_ended
+	Gamemanager.player_movable = true

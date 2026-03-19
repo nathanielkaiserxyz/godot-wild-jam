@@ -37,7 +37,7 @@ func _physics_process(_delta):
 		else:
 			player.play("idle")
 
-		if Input.is_action_just_pressed("ui_select") and direction != Vector2.ZERO:
+		if Input.is_action_just_pressed("ui_select") and direction != Vector2.ZERO and Gamemanager.player_movable == true:
 			start_dash(direction)
 
 	move_and_slide()

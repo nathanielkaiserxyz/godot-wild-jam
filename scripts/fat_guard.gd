@@ -1,6 +1,7 @@
 extends Area2D
 
 var player_in_range: bool = false
+var player_in_dialogue: bool = false
 
 func _ready() -> void:
 	$AnimatedSprite2D.play("idle")
@@ -16,9 +17,11 @@ func _on_body_exited(body):
 		print("false")
 
 func _process(_delta):
-	if player_in_range and Input.is_action_just_pressed("interact"):
+	if player_in_range and Input.is_action_just_pressed("interact") and !player_in_dialogue:
 		Gamemanager.player_movable = false
+		player_in_dialogue = true
 		DialogueManager.show_example_dialogue_balloon(load("res://dialogue/guard_outside_museum.dialogue"), "start")
 		await DialogueManager.dialogue_ended
+		player_in_dialogue = false
 		Gamemanager.player_movable = true
 	

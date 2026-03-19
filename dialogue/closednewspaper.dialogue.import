@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://blb8sibpusrnq"
+path="res://.godot/imported/closednewspaper.dialogue-2aa417b86b093ed4158eda3c2a00b88e.tres"
+
+[deps]
+
+source_file="res://dialogue/closednewspaper.dialogue"
+dest_files=["res://.godot/imported/closednewspaper.dialogue-2aa417b86b093ed4158eda3c2a00b88e.tres"]
+
+[params]
+
+defaults=true
