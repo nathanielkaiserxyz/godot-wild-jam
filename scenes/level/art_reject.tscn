@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://bx0ku7dpnsf05" path="res://scripts/drawing_ui.gd" id="4_s522x"]
 [ext_resource type="Texture2D" uid="uid://c3306nog2ded0" path="res://assets/world/newspaper.png" id="5_gotkp"]
 [ext_resource type="Texture2D" uid="uid://df2fmq6s0jcyr" path="res://assets/world/studio apartment.png" id="8_3e2wr"]
+[ext_resource type="Script" uid="uid://3j34smcm3nvn" path="res://scenes/level/tutorial_dialogue.gd" id="8_dry0p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gclxb"]
 size = Vector2(39, 37)
@@ -35,11 +36,14 @@ size = Vector2(30, 29)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2dl6d"]
 size = Vector2(44, 29)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k3eak"]
+size = Vector2(8, 20)
+
 [node name="ArtReject" type="Node2D" unique_id=225717566]
 
 [node name="Player" parent="." unique_id=1453906378 instance=ExtResource("1_3f7yb")]
 z_index = 2
-position = Vector2(195, 136)
+position = Vector2(129, 150)
 
 [node name="newspaper" type="TextureRect" parent="." unique_id=304503063]
 visible = false
@@ -196,6 +200,13 @@ shape = SubResource("RectangleShape2D_2dl6d")
 position = Vector2(186, 88)
 texture = ExtResource("8_3e2wr")
 
+[node name="Area2D" type="Area2D" parent="." unique_id=1809091192]
+script = ExtResource("8_dry0p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1750207300]
+position = Vector2(142, 151)
+shape = SubResource("RectangleShape2D_k3eak")
+
 [connection signal="pressed" from="newspaper/close_paper" to="easel" method="_on_close_paper_pressed"]
 [connection signal="body_entered" from="easel" to="easel" method="_on_body_entered"]
 [connection signal="body_exited" from="easel" to="easel" method="_on_body_exited"]
@@ -203,3 +214,5 @@ texture = ExtResource("8_3e2wr")
 [connection signal="pressed" from="CanvasLayer/Drawing_UI/submit_museum" to="CanvasLayer/Drawing_UI" method="_on_submit_museum_pressed"]
 [connection signal="area_entered" from="leave" to="easel" method="_on_leave_area_entered"]
 [connection signal="body_entered" from="leave" to="easel" method="_on_leave_body_entered"]
+[connection signal="area_entered" from="Area2D" to="Area2D" method="_on_area_entered"]
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
