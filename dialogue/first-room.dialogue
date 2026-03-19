@@ -1,0 +1,11 @@
+~ start
+thinking: [[Hi|Hola|Howdy]], artist
+thinking: you should go make some money 
+- How do I do that?
+	thinking: press e on the easel and paint something good!
+- I think I'll just roll around.
+	thinking: I should press space to do that...
+- Start again => start
+- End the conversation => END
+
+=> END

@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://shrk06fns81b"
+path="res://.godot/imported/first-room.dialogue-3ac5febaf6a7e953ba2b8fbfe4678dc3.tres"
+
+[deps]
+
+source_file="res://dialogue/first-room.dialogue"
+dest_files=["res://.godot/imported/first-room.dialogue-3ac5febaf6a7e953ba2b8fbfe4678dc3.tres"]
+
+[params]
+
+defaults=true
