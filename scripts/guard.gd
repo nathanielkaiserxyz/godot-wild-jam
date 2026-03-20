@@ -5,6 +5,9 @@ var player = null
 
 @onready var nav_agent = $NavigationAgent2D
 
+func _ready():
+	print(nav_agent)
+
 func _physics_process(delta):
 	if player:
 		nav_agent.target_position = player.global_position

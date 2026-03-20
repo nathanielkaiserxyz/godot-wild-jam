@@ -32,9 +32,12 @@ animations = [{
 size = Vector2(8, 13)
 
 [node name="Guard" type="Node2D" unique_id=136804232]
+z_index = 1
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1671233245]
 script = ExtResource("1_0fsxk")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="CharacterBody2D" unique_id=182351857]
 
 [node name="DetectRadius" type="Area2D" parent="CharacterBody2D" unique_id=178637068]
 
@@ -49,8 +52,6 @@ animation = &"idle"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1657818592]
 position = Vector2(0, 1.5)
 shape = SubResource("RectangleShape2D_u5xrc")
-
-[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=182351857]
 
 [connection signal="body_entered" from="CharacterBody2D/DetectRadius" to="CharacterBody2D" method="_on_detect_radius_body_entered"]
 [connection signal="body_exited" from="CharacterBody2D/DetectRadius" to="CharacterBody2D" method="_on_detect_radius_body_exited"]
