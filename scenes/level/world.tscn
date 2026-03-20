@@ -4,7 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://b156telh6bhwe" path="res://scenes/player/player.tscn" id="1_mi2e6"]
 [ext_resource type="PackedScene" uid="uid://wob518n64ad4" path="res://scenes/mobs/fat_guard.tscn" id="2_y5wde"]
 [ext_resource type="Texture2D" uid="uid://b03a55osrmvg5" path="res://assets/world/outside.png" id="3_gkrfc"]
-[ext_resource type="PackedScene" uid="uid://be5lmh0a6qkhc" path="res://scenes/mobs/guard.tscn" id="5_mrmfm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gkrfc"]
 size = Vector2(212, 68)
@@ -68,8 +67,5 @@ scale = Vector2(2.4400027, 1)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="leave" unique_id=1541774428]
 position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_cplf4")
-
-[node name="Guard" parent="." unique_id=136804232 instance=ExtResource("5_mrmfm")]
-position = Vector2(148, 231)
 
 [connection signal="body_entered" from="leave" to="." method="_on_leave_body_entered"]

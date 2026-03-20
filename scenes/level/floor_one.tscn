@@ -6,7 +6,7 @@
 [node name="FloorOne" type="Node2D" unique_id=2052286030]
 
 [node name="Guard" parent="." unique_id=136804232 instance=ExtResource("1_lp6xf")]
-position = Vector2(159, 138)
+position = Vector2(221, 203)
 
 [node name="Player" parent="." unique_id=1453906378 instance=ExtResource("2_cdhq6")]
 position = Vector2(161, 288)
