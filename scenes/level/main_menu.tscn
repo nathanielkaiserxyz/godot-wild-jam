@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dq0ofjtyapgxo"]
 
 [ext_resource type="Script" uid="uid://c5e65okobdav2" path="res://scripts/main_menu.gd" id="1_w0sx8"]
+[ext_resource type="Texture2D" uid="uid://dqj4xq06dg08l" path="res://assets/world/art cover.webp" id="2_6egh8"]
 
 [node name="MainMenu" type="Node2D" unique_id=2027672176]
 script = ExtResource("1_w0sx8")
@@ -32,6 +33,12 @@ offset_bottom = 73.0
 theme_type_variation = &"HeaderLarge"
 theme_override_font_sizes/font_size = 51
 text = "Art Heist"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1457474179]
+z_index = -2
+position = Vector2(323.75, 180)
+scale = Vector2(1.2275391, 1.2708334)
+texture = ExtResource("2_6egh8")
 
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]

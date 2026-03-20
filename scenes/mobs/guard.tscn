@@ -50,5 +50,7 @@ animation = &"idle"
 position = Vector2(0, 1.5)
 shape = SubResource("RectangleShape2D_u5xrc")
 
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=182351857]
+
 [connection signal="body_entered" from="CharacterBody2D/DetectRadius" to="CharacterBody2D" method="_on_detect_radius_body_entered"]
 [connection signal="body_exited" from="CharacterBody2D/DetectRadius" to="CharacterBody2D" method="_on_detect_radius_body_exited"]
