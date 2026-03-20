@@ -3,6 +3,7 @@ extends Area2D
 var player_in_range: bool = false
 var already_sold: bool = false
 @export var drawing_screen_path: NodePath 
+@onready var prompt = $Prompt
 
 func _on_body_entered(body):
 	if body.name == "Player": 
@@ -18,7 +19,14 @@ func _process(_delta):
 		open_drawing_screen()
 	elif already_sold:
 		pass
-		#display 'I should get them back' or something
+		#display 'I should get them back' or something]
+	if player_in_range:
+		prompt.visible = true 
+	else:
+		prompt.visible = false
+			
+			
+
 
 func open_drawing_screen():
 	var ui = get_node("../CanvasLayer/Drawing_UI")
