@@ -36,7 +36,7 @@ text = "Art Heist"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1457474179]
 z_index = -2
-position = Vector2(323.75, 180)
+position = Vector2(313.99997, 182.99998)
 scale = Vector2(1.2275391, 1.2708334)
 texture = ExtResource("2_6egh8")
 
