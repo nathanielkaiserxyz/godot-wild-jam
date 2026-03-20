@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://be5lmh0a6qkhc"]
+
+[ext_resource type="Script" uid="uid://cnt01mfh1rstt" path="res://scripts/guard.gd" id="1_0fsxk"]
+[ext_resource type="Texture2D" uid="uid://dm7d65hpt3j2y" path="res://assets/mobs/Guard.png" id="2_qfrta"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4e6w"]
+size = Vector2(181, 145)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0hvhn"]
+atlas = ExtResource("2_qfrta")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dqhds"]
+atlas = ExtResource("2_qfrta")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fa2b1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0hvhn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dqhds")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u5xrc"]
+size = Vector2(8, 13)
+
+[node name="Guard" type="Node2D" unique_id=136804232]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1671233245]
+script = ExtResource("1_0fsxk")
+
+[node name="DetectRadius" type="Area2D" parent="CharacterBody2D" unique_id=178637068]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/DetectRadius" unique_id=1431692304]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_g4e6w")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=1072702015]
+sprite_frames = SubResource("SpriteFrames_fa2b1")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1657818592]
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_u5xrc")
+
+[connection signal="body_entered" from="CharacterBody2D/DetectRadius" to="CharacterBody2D" method="_on_detect_radius_body_entered"]
+[connection signal="body_exited" from="CharacterBody2D/DetectRadius" to="CharacterBody2D" method="_on_detect_radius_body_exited"]

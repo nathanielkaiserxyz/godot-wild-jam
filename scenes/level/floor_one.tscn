@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://cm3jg6sximj6p"]
+
+[ext_resource type="PackedScene" uid="uid://be5lmh0a6qkhc" path="res://scenes/mobs/guard.tscn" id="1_lp6xf"]
+[ext_resource type="PackedScene" uid="uid://b156telh6bhwe" path="res://scenes/player/player.tscn" id="2_cdhq6"]
+
+[node name="FloorOne" type="Node2D" unique_id=2052286030]
+
+[node name="Guard" parent="." unique_id=136804232 instance=ExtResource("1_lp6xf")]
+position = Vector2(159, 138)
+
+[node name="Player" parent="." unique_id=1453906378 instance=ExtResource("2_cdhq6")]
+position = Vector2(161, 288)

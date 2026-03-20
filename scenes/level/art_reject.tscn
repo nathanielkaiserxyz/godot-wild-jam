@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://bx0ku7dpnsf05" path="res://scripts/drawing_ui.gd" id="4_s522x"]
 [ext_resource type="Texture2D" uid="uid://c3306nog2ded0" path="res://assets/world/newspaper.png" id="5_gotkp"]
 [ext_resource type="Texture2D" uid="uid://df2fmq6s0jcyr" path="res://assets/world/studio apartment.png" id="8_3e2wr"]
-[ext_resource type="Script" uid="uid://3j34smcm3nvn" path="res://scenes/level/tutorial_dialogue.gd" id="8_dry0p"]
+[ext_resource type="Script" uid="uid://3j34smcm3nvn" path="res://scripts/tutorial_dialogue.gd" id="8_dry0p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gclxb"]
 size = Vector2(39, 37)
