@@ -1,0 +1,159 @@
+[gd_scene format=3 uid="uid://db7ykd84jx5i8"]
+
+[ext_resource type="PackedScene" uid="uid://b156telh6bhwe" path="res://scenes/player/player.tscn" id="1_kl3uu"]
+[ext_resource type="Shader" uid="uid://cg62wprjqj1xv" path="res://assets/outline.gdshader" id="2_r0r6m"]
+[ext_resource type="Texture2D" uid="uid://l41f3m10bi2e" path="res://assets/world/easel.png" id="3_56p0n"]
+[ext_resource type="Texture2D" uid="uid://mlhgr3mkyfg5" path="res://assets/world/lettere.png" id="4_4colt"]
+[ext_resource type="Texture2D" uid="uid://df2fmq6s0jcyr" path="res://assets/world/studio apartment.png" id="5_8bwh5"]
+[ext_resource type="Script" uid="uid://qmi6f36hy1yl" path="res://scripts/desk.gd" id="5_kl3uu"]
+[ext_resource type="Texture2D" uid="uid://biby66d2o137x" path="res://assets/world/dresser.png" id="7_56p0n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gclxb"]
+size = Vector2(39, 37)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gotkp"]
+size = Vector2(32, 31)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1rs3f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3e2wr"]
+size = Vector2(20, 243)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dry0p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tp0un"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oftp4"]
+size = Vector2(30, 25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ue8ih"]
+size = Vector2(20, 31)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fm5n5"]
+size = Vector2(30, 29)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gfxbw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yhun7"]
+size = Vector2(16.5, 19.5)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_4colt"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_56p0n"]
+shader = ExtResource("2_r0r6m")
+shader_parameter/outline_color = Color(1, 1, 1, 1)
+shader_parameter/outline_thickness = 2.0000000475
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2dl6d"]
+size = Vector2(44, 38.5)
+
+[node name="ArtReject2" type="Node2D" unique_id=225717566]
+
+[node name="Player" parent="." unique_id=1453906378 instance=ExtResource("1_kl3uu")]
+z_index = 2
+position = Vector2(129, 150)
+
+[node name="easel" type="Area2D" parent="." unique_id=1420443429]
+z_index = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="easel" unique_id=1118662099]
+visible = false
+visibility_layer = 2
+position = Vector2(188.5, 18.5)
+shape = SubResource("RectangleShape2D_gclxb")
+
+[node name="easel" type="Sprite2D" parent="easel" unique_id=378053745]
+visibility_layer = 2
+position = Vector2(190, 17)
+texture = ExtResource("3_56p0n")
+
+[node name="lettere" type="Sprite2D" parent="easel" unique_id=1274481537]
+visible = false
+position = Vector2(176, 5)
+texture = ExtResource("4_4colt")
+
+[node name="leave" type="Area2D" parent="." unique_id=110879393]
+visible = false
+position = Vector2(194, 167)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="leave" unique_id=1539335181]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_gotkp")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1082764560]
+position = Vector2(-2, -5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=148566912]
+position = Vector2(197.99998, 9)
+scale = Vector2(26.631529, 0.8279326)
+shape = SubResource("RectangleShape2D_1rs3f")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=1141683351]
+position = Vector2(97, 112)
+scale = Vector2(-1.656055, 1)
+shape = SubResource("RectangleShape2D_3e2wr")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=1018656649]
+position = Vector2(193.99998, 176.99998)
+scale = Vector2(12.124277, -1.0763236)
+shape = SubResource("RectangleShape2D_dry0p")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=2144129097]
+position = Vector2(272.00003, 121)
+scale = Vector2(1.0320443, 16.311993)
+shape = SubResource("RectangleShape2D_tp0un")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D" unique_id=413638222]
+position = Vector2(133, 130.5)
+shape = SubResource("RectangleShape2D_oftp4")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D" unique_id=1229471769]
+position = Vector2(122, 35.5)
+shape = SubResource("RectangleShape2D_ue8ih")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D" unique_id=928154537]
+position = Vector2(189, 24.5)
+shape = SubResource("RectangleShape2D_fm5n5")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="StaticBody2D" unique_id=1828746550]
+position = Vector2(252, 148)
+scale = Vector2(-0.76641816, 1.5278946)
+shape = SubResource("RectangleShape2D_gfxbw")
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="StaticBody2D" unique_id=1477434830]
+position = Vector2(238, 158)
+scale = Vector2(1, 0.64451003)
+shape = SubResource("RectangleShape2D_yhun7")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1367205907]
+
+[node name="StudioApartment" type="Sprite2D" parent="." unique_id=173482930]
+position = Vector2(186, 88)
+texture = ExtResource("5_8bwh5")
+
+[node name="desk" type="Area2D" parent="." unique_id=1403890722]
+material = SubResource("CanvasItemMaterial_4colt")
+use_parent_material = true
+script = ExtResource("5_kl3uu")
+
+[node name="desk" type="Sprite2D" parent="desk" unique_id=554248012]
+z_as_relative = false
+material = SubResource("ShaderMaterial_56p0n")
+position = Vector2(234, 17)
+texture = ExtResource("7_56p0n")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="desk" unique_id=1756698602]
+z_index = 1
+position = Vector2(235, 19)
+shape = SubResource("RectangleShape2D_2dl6d")
+
+[node name="lettere" type="Sprite2D" parent="desk" unique_id=310106433]
+position = Vector2(235, 19)
+texture = ExtResource("4_4colt")
+
+[connection signal="body_entered" from="easel" to="easel" method="_on_body_entered"]
+[connection signal="body_exited" from="easel" to="easel" method="_on_body_exited"]
+[connection signal="area_entered" from="leave" to="easel" method="_on_leave_area_entered"]
+[connection signal="body_entered" from="leave" to="easel" method="_on_leave_body_entered"]
+[connection signal="body_entered" from="desk" to="desk" method="_on_body_entered"]
+[connection signal="body_exited" from="desk" to="desk" method="_on_body_exited"]
