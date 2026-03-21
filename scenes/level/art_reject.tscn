@@ -5,12 +5,19 @@
 [ext_resource type="Texture2D" uid="uid://l41f3m10bi2e" path="res://assets/world/easel.png" id="2_gclxb"]
 [ext_resource type="Theme" uid="uid://cimflqbn2rxdd" path="res://assets/world/newspaper_text_theme.tres" id="3_1rs3f"]
 [ext_resource type="Script" uid="uid://bx0ku7dpnsf05" path="res://scripts/drawing_ui.gd" id="4_s522x"]
+[ext_resource type="Shader" uid="uid://cg62wprjqj1xv" path="res://assets/outline.gdshader" id="5_dry0p"]
 [ext_resource type="Texture2D" uid="uid://c3306nog2ded0" path="res://assets/world/newspaper.png" id="5_gotkp"]
+[ext_resource type="Texture2D" uid="uid://mlhgr3mkyfg5" path="res://assets/world/lettere.png" id="7_tp0un"]
 [ext_resource type="Texture2D" uid="uid://df2fmq6s0jcyr" path="res://assets/world/studio apartment.png" id="8_3e2wr"]
 [ext_resource type="Script" uid="uid://3j34smcm3nvn" path="res://scripts/tutorial_dialogue.gd" id="8_dry0p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gclxb"]
 size = Vector2(39, 37)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tp0un"]
+shader = ExtResource("5_dry0p")
+shader_parameter/outline_color = Color(1, 1, 1, 1)
+shader_parameter/outline_thickness = 1.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gotkp"]
 size = Vector2(32, 31)
@@ -106,20 +113,15 @@ visibility_layer = 2
 position = Vector2(188.5, 18.5)
 shape = SubResource("RectangleShape2D_gclxb")
 
-[node name="Sprite2D" type="Sprite2D" parent="easel" unique_id=378053745]
+[node name="easel" type="Sprite2D" parent="easel" unique_id=378053745]
 visibility_layer = 2
+material = SubResource("ShaderMaterial_tp0un")
 position = Vector2(190, 17)
 texture = ExtResource("2_gclxb")
 
-[node name="Prompt" type="Label" parent="easel" unique_id=1820032764]
-visible = false
-offset_left = 186.0
-offset_top = 7.0
-offset_right = 205.0
-offset_bottom = 30.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 11
-text = "E"
+[node name="lettere" type="Sprite2D" parent="easel" unique_id=1274481537]
+position = Vector2(176, 5)
+texture = ExtResource("7_tp0un")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1006321302]
 layer = 2
