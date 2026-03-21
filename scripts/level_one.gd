@@ -6,10 +6,10 @@ var player_in_range: bool = false
 func _ready() -> void:
 	$player_painting/player_drawing.texture = Gamemanager.player_drawing_one
 	shader_material = $player_painting_sign/Sprite2D.material
+	await get_tree().physics_frame
+	$NavigationRegion2D.bake_navigation_polygon()
 	
 func _process(_delta):	
-
-	
 	if player_in_range:
 		$player_painting_sign/Sprite2D.material = shader_material
 	else:

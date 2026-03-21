@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://b86frf3da3ga1" path="res://assets/world/exclamation.png" id="3_qfrta"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4e6w"]
-size = Vector2(181, 145)
+size = Vector2(371, 331)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0hvhn"]
 atlas = ExtResource("2_qfrta")
@@ -41,12 +41,12 @@ script = ExtResource("1_0fsxk")
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="CharacterBody2D" unique_id=182351857]
 path_max_distance = 1000.0
 avoidance_enabled = true
-radius = 50.0
+debug_enabled = true
 
 [node name="DetectRadius" type="Area2D" parent="CharacterBody2D" unique_id=178637068]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/DetectRadius" unique_id=1431692304]
-position = Vector2(-0.5, -0.5)
+position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_g4e6w")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=1072702015]

@@ -8,11 +8,10 @@ var update_path_timer := 0.0
 func _ready():
 	await get_tree().physics_frame
 	await get_tree().physics_frame
-	nav_agent.radius = 8.0
+	nav_agent.radius = 50.0
 	nav_agent.path_desired_distance = 4.0
 	nav_agent.target_desired_distance = 4.0
 	nav_agent.avoidance_enabled = true
-	nav_agent.path_postprocessing = NavigationPathQueryParameters2D.PATH_POSTPROCESSING_EDGECENTERED
 
 func _physics_process(delta):
 	if player:
