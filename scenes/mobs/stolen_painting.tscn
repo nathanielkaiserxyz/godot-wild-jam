@@ -1,0 +1,109 @@
+[gd_scene format=3 uid="uid://bfg1mgf8ddgfm"]
+
+[ext_resource type="Script" uid="uid://bbq6rwwqnrkrr" path="res://scripts/stolen_painting.gd" id="1_uf7nj"]
+[ext_resource type="Texture2D" uid="uid://der4khb5ak0f2" path="res://assets/world/stolenpainting-Sheet.png" id="2_wy7l6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xmev1"]
+atlas = ExtResource("2_wy7l6")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ai8wa"]
+atlas = ExtResource("2_wy7l6")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r8ldl"]
+atlas = ExtResource("2_wy7l6")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3gbdm"]
+atlas = ExtResource("2_wy7l6")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8wqem"]
+atlas = ExtResource("2_wy7l6")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o75ky"]
+atlas = ExtResource("2_wy7l6")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nxqwg"]
+atlas = ExtResource("2_wy7l6")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xbfn7"]
+atlas = ExtResource("2_wy7l6")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gyu1g"]
+atlas = ExtResource("2_wy7l6")
+region = Rect2(128, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_546yh"]
+atlas = ExtResource("2_wy7l6")
+region = Rect2(144, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_22mn0"]
+atlas = ExtResource("2_wy7l6")
+region = Rect2(160, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_67tbd"]
+atlas = ExtResource("2_wy7l6")
+region = Rect2(176, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j7gwl"]
+atlas = ExtResource("2_wy7l6")
+region = Rect2(192, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yyxrh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xmev1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ai8wa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r8ldl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3gbdm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8wqem")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o75ky")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nxqwg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xbfn7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gyu1g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_546yh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_22mn0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_67tbd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j7gwl")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="stolen_painting" type="CharacterBody2D" unique_id=143793906]
+script = ExtResource("1_uf7nj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=306294988]
+sprite_frames = SubResource("SpriteFrames_yyxrh")

@@ -4,9 +4,12 @@ var player = null
 var run_speed = 100.0
 var patrol_speed = 30.0
 
-@onready var path_follow = $Path2D/PathFollow2D
 @onready var nav_agent = $NavigationAgent2D
 var update_path_timer := 0.0
+
+var patrol_counter = 0
+var patrol: Array = []
+var patrol_waiting := false
 
 func _ready():
 	await get_tree().physics_frame
@@ -15,6 +18,13 @@ func _ready():
 	nav_agent.path_desired_distance = 4.0
 	nav_agent.target_desired_distance = 4.0
 	nav_agent.avoidance_enabled = true
+	
+	patrol = [
+		get_node("../../patrol").global_position,
+		get_node("../../patrol2").global_position,
+		get_node("../../patrol3").global_position,
+		get_node("../../patrol4").global_position
+	]
 
 func _physics_process(delta):
 	if player and Gamemanager.stolen_painting:
@@ -28,14 +38,28 @@ func _physics_process(delta):
 		var next_point = nav_agent.get_next_path_position()
 		velocity = global_position.direction_to(next_point) * run_speed
 	else:
-		# Move the PathFollow2D progress forward
-		path_follow.progress += patrol_speed * delta
-		# Move enemy toward the PathFollow2D's position
-		var target = path_follow.global_position
-		velocity = global_position.direction_to(target) * patrol_speed
-	
+		if patrol.is_empty() or patrol_waiting:
+			return
+		update_path_timer -= delta
+		if update_path_timer <= 0.0:
+			nav_agent.target_position = patrol[patrol_counter]
+			update_path_timer = 0.2
+		if global_position.distance_to(patrol[patrol_counter]) < 15.0:
+			patrol_waiting = true
+			_next_patrol_point()
+			return
+		var next_point = nav_agent.get_next_path_position()
+		velocity = global_position.direction_to(next_point) * patrol_speed
 	move_and_slide()
 
+func _next_patrol_point():
+	await get_tree().create_timer(1.0).timeout
+	if patrol_counter < 3:
+		print("next_stop")
+		patrol_counter += 1
+	else:
+		patrol_counter = 0
+	patrol_waiting = false
 
 func _on_detect_radius_body_entered(body: Node2D) -> void:
 	if body.name == "Player" and Gamemanager.stolen_painting:

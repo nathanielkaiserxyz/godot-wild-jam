@@ -32,12 +32,6 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u5xrc"]
 size = Vector2(8, 13)
 
-[sub_resource type="Curve2D" id="Curve2D_qfrta"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 34, 90, 0, 0, 0, 0, -513, 37, 0, 0, 0, 0, -573, -90, 0, 0, 0, 0, -580, -574, 0, 0, 0, 0, 72, -584, 0, 0, 0, 0, 735, -589, 0, 0, 0, 0, 730, 38, 0, 0, 0, 0, 36, 89)
-}
-point_count = 8
-
 [node name="Guard" type="Node2D" unique_id=136804232]
 z_index = 1
 
@@ -47,7 +41,6 @@ script = ExtResource("1_0fsxk")
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="CharacterBody2D" unique_id=182351857]
 path_max_distance = 1000.0
 avoidance_enabled = true
-debug_enabled = true
 
 [node name="DetectRadius" type="Area2D" parent="CharacterBody2D" unique_id=178637068]
 
@@ -71,13 +64,6 @@ texture = ExtResource("3_qfrta")
 
 [node name="Timer" type="Timer" parent="CharacterBody2D" unique_id=781575519]
 one_shot = true
-
-[node name="Path2D" type="Path2D" parent="CharacterBody2D" unique_id=730989036]
-curve = SubResource("Curve2D_qfrta")
-
-[node name="PathFollow2D" type="PathFollow2D" parent="CharacterBody2D/Path2D" unique_id=1218564711]
-position = Vector2(34, 90)
-rotation = -3.045002
 
 [connection signal="body_entered" from="CharacterBody2D/DetectRadius" to="CharacterBody2D" method="_on_detect_radius_body_entered"]
 [connection signal="body_exited" from="CharacterBody2D/DetectRadius" to="CharacterBody2D" method="_on_detect_radius_body_exited"]

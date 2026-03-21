@@ -302,3 +302,6 @@ zoom = Vector2(2, 2)
 position_smoothing_speed = 10.0
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
+
+[node name="Marker2D" type="Marker2D" parent="Player" unique_id=1595612216]
+scale = Vector2(0.120000005, 0.08000064)

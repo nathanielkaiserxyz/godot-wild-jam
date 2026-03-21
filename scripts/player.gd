@@ -4,11 +4,33 @@ extends CharacterBody2D
 @export var dash_speed: float = 180.0
 @export var dash_duration: float = 0.2
 
-
-
 var is_dashing: bool = false
 var dash_direction: Vector2 = Vector2.ZERO
+
+var previous_position: Vector2 = Vector2.ZERO
+@onready var marker = $Marker2D
 @onready var player = $AnimatedSprite2D 
+
+func _ready():
+	previous_position = global_position
+	var timer = Timer.new()
+	add_child(timer)
+	timer.wait_time = .3
+	timer.autostart = true
+	timer.timeout.connect(_update_marker)
+	timer.start()
+
+func _update_marker():
+	var direction_to_player = global_position - previous_position
+	
+	if direction_to_player.length() < 1.0:
+		marker.global_position = global_position + Vector2(0, 20)
+	else:
+		var offset = direction_to_player.normalized() * -20
+		marker.global_position = global_position + offset
+		previous_position = global_position
+	
+	previous_position = global_position
 
 func _physics_process(_delta):
 	if is_dashing:

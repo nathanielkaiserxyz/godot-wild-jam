@@ -2,3 +2,4 @@
 /android/
 .editorconfig
 .gitattributes
+.DS_Store
