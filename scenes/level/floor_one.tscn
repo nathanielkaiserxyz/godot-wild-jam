@@ -171,6 +171,12 @@ source_geometry_mode = 1
 source_geometry_group_name = &"navigation"
 agent_radius = 9.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7jbdj"]
+size = Vector2(66, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bpskx"]
+size = Vector2(75, 98)
+
 [node name="FloorOne" type="Node2D" unique_id=2052286030]
 script = ExtResource("1_kvfjg")
 
@@ -310,10 +316,25 @@ position = Vector2(402, -714)
 [node name="patrol4" type="Node2D" parent="." unique_id=1107700112]
 position = Vector2(398, -125)
 
+[node name="top_left_cutscene" type="Node2D" parent="." unique_id=1095635596]
+position = Vector2(-917, -899)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1672261985]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=380146203]
+position = Vector2(-905, -534)
+shape = SubResource("RectangleShape2D_7jbdj")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D" unique_id=242763803]
+position = Vector2(-698, -726)
+scale = Vector2(0.39999753, 1)
+shape = SubResource("RectangleShape2D_bpskx")
+
 [connection signal="body_entered" from="player_painting" to="." method="_on_player_painting_body_entered"]
 [connection signal="body_exited" from="player_painting" to="." method="_on_player_painting_body_exited"]
 [connection signal="body_entered" from="player_painting_sign" to="." method="_on_player_painting_sign_body_entered"]
 [connection signal="body_exited" from="player_painting_sign" to="." method="_on_player_painting_sign_body_exited"]
 [connection signal="pressed" from="player_painting_sign/player_sign/player_sign/Button" to="." method="_on_button_pressed"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 
 [editable path="Guard"]

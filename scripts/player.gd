@@ -10,6 +10,8 @@ var dash_direction: Vector2 = Vector2.ZERO
 var previous_position: Vector2 = Vector2.ZERO
 @onready var marker = $Marker2D
 @onready var player = $AnimatedSprite2D 
+@onready var camera = $Camera2D
+
 
 func _ready():
 	previous_position = global_position
@@ -79,3 +81,23 @@ func start_dash(dir):
 			
 	await player.animation_finished
 	is_dashing = false
+
+var is_transitioning = false
+
+func move_camera_to(target: Node2D, duration: float = 5.0):
+	is_transitioning = true
+	
+	var tween = create_tween()
+	tween.set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN_OUT)
+	tween.tween_property(camera, "global_position", target.global_position, duration)
+	
+	await tween.finished
+	is_transitioning = false
+
+func return_camera(duration: float = 1.0):
+	var tween = create_tween()
+	tween.set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN_OUT)
+	# target local position zero = back on top of player
+	tween.tween_property(camera, "position", Vector2.ZERO, duration)
+	
+	await tween.finished

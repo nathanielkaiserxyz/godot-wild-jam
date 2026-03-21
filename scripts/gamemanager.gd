@@ -5,6 +5,12 @@ extends Node
 
 @export var stolen_painting: bool = false
 
+@export var bottom_right: bool = false
+@export var top_right: bool = false
+@export var top_middle: bool = false
+@export var top_left: bool = false
+@export var bottom_left: bool = false
+
 var player_drawing_one: ImageTexture 
 
 
