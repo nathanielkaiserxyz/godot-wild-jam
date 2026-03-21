@@ -2,26 +2,32 @@
 
 [ext_resource type="Script" uid="uid://bg1s8lq3pwtu8" path="res://scripts/fat_guard.gd" id="1_b1otb"]
 [ext_resource type="Texture2D" uid="uid://cm18tql2cxfcy" path="res://assets/mobs/fat_guard.png" id="1_etyf1"]
+[ext_resource type="Shader" uid="uid://cg62wprjqj1xv" path="res://assets/outline.gdshader" id="2_feq07"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b1otb"]
-size = Vector2(24, 23)
+size = Vector2(47, 46)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_feq07"]
-atlas = ExtResource("1_etyf1")
-region = Rect2(0, 0, 16, 16)
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gifwn"]
+shader = ExtResource("2_feq07")
+shader_parameter/outline_color = Color(1, 1, 1, 1)
+shader_parameter/outline_thickness = 1.0
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_gifwn"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_3fb40"]
 atlas = ExtResource("1_etyf1")
-region = Rect2(16, 0, 16, 16)
+region = Rect2(0, 0, 18, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l28mo"]
+atlas = ExtResource("1_etyf1")
+region = Rect2(18, 0, 18, 17)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3fb40"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_feq07")
+"texture": SubResource("AtlasTexture_3fb40")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_gifwn")
+"texture": SubResource("AtlasTexture_l28mo")
 }],
 "loop": true,
 "name": &"idle",
@@ -38,10 +44,10 @@ z_index = 1
 script = ExtResource("1_b1otb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="fat_guard" unique_id=858139801]
-position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_b1otb")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="fat_guard" unique_id=675733260]
+material = SubResource("ShaderMaterial_gifwn")
 sprite_frames = SubResource("SpriteFrames_3fb40")
 animation = &"idle"
 

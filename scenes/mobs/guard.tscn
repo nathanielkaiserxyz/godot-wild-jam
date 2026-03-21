@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cnt01mfh1rstt" path="res://scripts/guard.gd" id="1_0fsxk"]
 [ext_resource type="Texture2D" uid="uid://dm7d65hpt3j2y" path="res://assets/mobs/Guard.png" id="2_qfrta"]
+[ext_resource type="Texture2D" uid="uid://b86frf3da3ga1" path="res://assets/world/exclamation.png" id="3_qfrta"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4e6w"]
 size = Vector2(181, 145)
@@ -38,6 +39,9 @@ z_index = 1
 script = ExtResource("1_0fsxk")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="CharacterBody2D" unique_id=182351857]
+path_max_distance = 1000.0
+avoidance_enabled = true
+radius = 50.0
 
 [node name="DetectRadius" type="Area2D" parent="CharacterBody2D" unique_id=178637068]
 
@@ -52,6 +56,15 @@ animation = &"idle"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1657818592]
 position = Vector2(0, 1.5)
 shape = SubResource("RectangleShape2D_u5xrc")
+
+[node name="exclamation" type="Sprite2D" parent="CharacterBody2D" unique_id=733762805]
+visible = false
+z_index = 2
+position = Vector2(8, -8)
+texture = ExtResource("3_qfrta")
+
+[node name="Timer" type="Timer" parent="CharacterBody2D" unique_id=781575519]
+one_shot = true
 
 [connection signal="body_entered" from="CharacterBody2D/DetectRadius" to="CharacterBody2D" method="_on_detect_radius_body_entered"]
 [connection signal="body_exited" from="CharacterBody2D/DetectRadius" to="CharacterBody2D" method="_on_detect_radius_body_exited"]

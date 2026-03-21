@@ -3,7 +3,10 @@ extends Area2D
 var player_in_range: bool = false
 var already_sold: bool = false
 @export var drawing_screen_path: NodePath 
-@onready var prompt = $Prompt
+var shader_material: ShaderMaterial
+
+func _ready():
+	shader_material = $easel.material
 
 func _on_body_entered(body):
 	if body.name == "Player": 
@@ -21,10 +24,11 @@ func _process(_delta):
 		pass
 		#display 'I should get them back' or something]
 	if player_in_range:
-		prompt.visible = true 
+		$easel.material = shader_material
+		$lettere.visible = true
 	else:
-		prompt.visible = false
-			
+		$easel.material = null
+		$lettere.visible = false
 			
 
 
