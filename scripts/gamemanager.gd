@@ -3,7 +3,11 @@ extends Node
 @export var already_sold_painting_to_museum : bool = false
 @export var player_movable: bool = true
 
+@export var stolen_painting: bool = false
+
 var player_drawing_one: ImageTexture 
+
+
 
 var levels = [
 	"res://scenes/level/art_reject.tscn",

@@ -31,7 +31,6 @@ func _process(_delta):
 		$lettere.visible = false
 			
 
-
 func open_drawing_screen():
 	var ui = get_node("../CanvasLayer/Drawing_UI")
 	ui.visible = true

@@ -14,7 +14,7 @@ func _ready():
 	nav_agent.avoidance_enabled = true
 
 func _physics_process(delta):
-	if player:
+	if player and Gamemanager.stolen_painting:
 		update_path_timer -= delta
 		if update_path_timer <= 0.0:
 			nav_agent.target_position = player.global_position
@@ -28,7 +28,7 @@ func _physics_process(delta):
 		move_and_slide()
 
 func _on_detect_radius_body_entered(body: Node2D) -> void:
-	if body.name == "Player":
+	if body.name == "Player" and Gamemanager.stolen_painting:
 		player = body
 		$exclamation.visible = true
 		$Timer.start()
