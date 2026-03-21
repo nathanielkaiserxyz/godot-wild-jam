@@ -199,7 +199,7 @@ position = Vector2(-434, -270)
 shape = SubResource("RectangleShape2D_cb7om")
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D" unique_id=1503561531]
-position = Vector2(-194, -325.5)
+position = Vector2(-178, -325)
 shape = SubResource("RectangleShape2D_ewldt")
 
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D" unique_id=1673648515]
@@ -216,7 +216,7 @@ position = Vector2(-322, -326)
 texture = ExtResource("4_ph1ls")
 
 [node name="Statue2" type="Sprite2D" parent="." unique_id=991004822]
-position = Vector2(-194, -326)
+position = Vector2(-178, -325)
 texture = ExtResource("4_ph1ls")
 
 [node name="player_painting" type="Area2D" parent="." unique_id=719122849]
