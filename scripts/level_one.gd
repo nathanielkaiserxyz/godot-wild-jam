@@ -68,3 +68,9 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	if !Gamemanager.top_left and body.name == "Player":
 		var player = get_node("Player/Player")
 		player.move_camera_to($top_left_cutscene)
+		Gamemanager.top_left = true
+		Gamemanager.player_movable = false
+		DialogueManager.show_example_dialogue_balloon(load("res://dialogue/gossipwhenpanstopainting.dialogue"), "start")
+		await DialogueManager.dialogue_ended
+		Gamemanager.player_movable = true
+		player.move_camera_to($Player/Player)
