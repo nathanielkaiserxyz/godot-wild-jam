@@ -171,6 +171,9 @@ script = ExtResource("1_kvfjg")
 [node name="Guard" parent="." unique_id=136804232 instance=ExtResource("1_lp6xf")]
 position = Vector2(-259, -2)
 
+[node name="Path2D" parent="Guard/CharacterBody2D" parent_id_path=PackedInt32Array(136804232, 1671233245) index="6" unique_id=730989036]
+position = Vector2(-70, -156)
+
 [node name="Player" parent="." unique_id=1453906378 instance=ExtResource("2_cdhq6")]
 position = Vector2(-248, 106)
 
@@ -282,9 +285,12 @@ offset_bottom = 184.0
 text = "New Greatest drawing ever"
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=252782856]
+visible = false
 position = Vector2(-88, -104)
 navigation_polygon = SubResource("NavigationPolygon_vk6fv")
 
 [connection signal="body_entered" from="player_painting_sign" to="." method="_on_player_painting_sign_body_entered"]
 [connection signal="body_exited" from="player_painting_sign" to="." method="_on_player_painting_sign_body_exited"]
 [connection signal="pressed" from="player_painting_sign/player_sign/player_sign/Button" to="." method="_on_button_pressed"]
+
+[editable path="Guard"]

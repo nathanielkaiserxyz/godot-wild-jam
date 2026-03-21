@@ -8,7 +8,6 @@ extends Node
 var player_drawing_one: ImageTexture 
 
 
-
 var levels = [
 	"res://scenes/level/art_reject.tscn",
 	"res://scenes/level/world.tscn",

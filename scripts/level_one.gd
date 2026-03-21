@@ -28,7 +28,6 @@ func _on_player_painting_sign_body_exited(body: Node2D) -> void:
 	if body.name == "Player": 
 		player_in_range = false
 
-
 func _on_button_pressed() -> void:
 	$player_painting_sign/player_sign.visible = false
 	Gamemanager.player_movable = true
