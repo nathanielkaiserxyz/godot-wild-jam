@@ -6,9 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://bxccwnlsv37sa" path="res://assets/world/museumfloor.png" id="3_cdhq6"]
 [ext_resource type="Texture2D" uid="uid://cdagsgck04uij" path="res://assets/world/statue.png" id="4_ph1ls"]
 [ext_resource type="Texture2D" uid="uid://dqk6n88f8ceyi" path="res://assets/world/paintingframe.png" id="6_1485u"]
-[ext_resource type="Shader" uid="uid://cg62wprjqj1xv" path="res://assets/outline.gdshader" id="7_ewldt"]
+[ext_resource type="Shader" path="res://assets/outline.gdshader" id="7_ewldt"]
 [ext_resource type="Texture2D" uid="uid://mlhgr3mkyfg5" path="res://assets/world/lettere.png" id="8_8s7lg"]
 [ext_resource type="Texture2D" uid="uid://c5uxh7rdrpx6s" path="res://assets/world/sign.png" id="8_tbwm8"]
+[ext_resource type="Texture2D" uid="uid://bv8wq5kdu8s32" path="res://assets/world/fountain.png" id="10_8s7lg"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_ewldt"]
 
@@ -148,6 +149,9 @@ size = Vector2(21.978016, 22.999996)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1cd0e"]
 size = Vector2(20, 7)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7jbdj"]
+size = Vector2(63.625, 47.5)
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ewldt"]
 shader = ExtResource("7_ewldt")
 shader_parameter/outline_color = Color(1, 1, 1, 1)
@@ -230,6 +234,10 @@ shape = SubResource("RectangleShape2D_8s7lg")
 position = Vector2(-318, 35.5)
 shape = SubResource("RectangleShape2D_1cd0e")
 
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="StaticBody2D" unique_id=214053639]
+position = Vector2(-254.1875, -728.25)
+shape = SubResource("RectangleShape2D_7jbdj")
+
 [node name="Statue" type="Sprite2D" parent="." unique_id=1143560907]
 z_index = 1
 position = Vector2(-338, -326)
@@ -301,6 +309,7 @@ offset_bottom = 184.0
 text = "New Greatest drawing ever"
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=252782856]
+visible = false
 position = Vector2(-88, -104)
 navigation_polygon = SubResource("NavigationPolygon_vk6fv")
 
@@ -316,6 +325,7 @@ position = Vector2(402, -714)
 [node name="patrol4" type="Node2D" parent="." unique_id=1107700112]
 position = Vector2(398, -125)
 
+<<<<<<< HEAD
 [node name="top_left_cutscene" type="Node2D" parent="." unique_id=1095635596]
 position = Vector2(-917, -899)
 
@@ -329,6 +339,12 @@ shape = SubResource("RectangleShape2D_7jbdj")
 position = Vector2(-698, -726)
 scale = Vector2(0.39999753, 1)
 shape = SubResource("RectangleShape2D_bpskx")
+=======
+[node name="Fountain" type="Sprite2D" parent="." unique_id=116531319]
+z_index = 1
+position = Vector2(-254, -736)
+texture = ExtResource("10_8s7lg")
+>>>>>>> 0c900fad10c2641536d3db03a6b8e2210bff6b8c
 
 [connection signal="body_entered" from="player_painting" to="." method="_on_player_painting_body_entered"]
 [connection signal="body_exited" from="player_painting" to="." method="_on_player_painting_body_exited"]

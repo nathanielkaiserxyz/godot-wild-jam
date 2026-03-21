@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bfn1tl7rc7j7u"
+path="res://.godot/imported/gossipwhenpanstopainting.dialogue-9880f3e913b662f8b08354c91ae2b906.tres"
+
+[deps]
+
+source_file="res://dialogue/gossipwhenpanstopainting.dialogue"
+dest_files=["res://.godot/imported/gossipwhenpanstopainting.dialogue-9880f3e913b662f8b08354c91ae2b906.tres"]
+
+[params]
+
+defaults=true
