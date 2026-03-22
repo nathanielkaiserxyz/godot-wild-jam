@@ -66,5 +66,5 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		Gamemanager.player_movable = false
 		DialogueManager.show_example_dialogue_balloon(load("res://dialogue/gossipwhenpanstopainting.dialogue"), "start")
 		await DialogueManager.dialogue_ended
+		await player.move_camera_to($Player/Player)
 		Gamemanager.player_movable = true
-		player.move_camera_to($Player/Player)
