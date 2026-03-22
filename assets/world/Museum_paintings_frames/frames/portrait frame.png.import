@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cktpfporwyasl"
-path="res://.godot/imported/portrait frame.png-ce9bb06e428425f587a25b757102bd98.ctex"
+path="res://.godot/imported/portrait frame.png-6a4043a5e870d789bbf12c517a1368ae.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/world/Museum paintings:frames/frames/portrait frame.png"
-dest_files=["res://.godot/imported/portrait frame.png-ce9bb06e428425f587a25b757102bd98.ctex"]
+source_file="res://assets/world/Museum_paintings_frames/frames/portrait frame.png"
+dest_files=["res://.godot/imported/portrait frame.png-6a4043a5e870d789bbf12c517a1368ae.ctex"]
 
 [params]
 
