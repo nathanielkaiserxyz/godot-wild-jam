@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://rwm87mutvw2f"
-path="res://.godot/imported/32x32 frame.png-10fee22823949a3c13703d1dcf75d7e5.ctex"
+path="res://.godot/imported/32x32 frame.png-b38afd6a6f89dc26149cd3d8ceb3c15f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/world/Museum paintings:frames/frames/32x32 frame.png"
-dest_files=["res://.godot/imported/32x32 frame.png-10fee22823949a3c13703d1dcf75d7e5.ctex"]
+source_file="res://assets/world/Museum_paintings_frames/frames/32x32 frame.png"
+dest_files=["res://.godot/imported/32x32 frame.png-b38afd6a6f89dc26149cd3d8ceb3c15f.ctex"]
 
 [params]
 

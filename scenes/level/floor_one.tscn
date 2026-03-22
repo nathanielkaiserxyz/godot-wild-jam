@@ -10,12 +10,16 @@
 [ext_resource type="Texture2D" uid="uid://mlhgr3mkyfg5" path="res://assets/world/lettere.png" id="8_8s7lg"]
 [ext_resource type="Texture2D" uid="uid://c5uxh7rdrpx6s" path="res://assets/world/sign.png" id="8_tbwm8"]
 [ext_resource type="Texture2D" uid="uid://bv8wq5kdu8s32" path="res://assets/world/fountain.png" id="10_8s7lg"]
-[ext_resource type="Texture2D" uid="uid://rwm87mutvw2f" path="res://assets/world/Museum paintings:frames/frames/32x32 frame.png" id="11_wle02"]
-[ext_resource type="Texture2D" uid="uid://bx1rh83npfivb" path="res://assets/world/Museum paintings:frames/museumpaintings/clownfish32x32.png" id="12_1cd0e"]
-[ext_resource type="Texture2D" uid="uid://cktpfporwyasl" path="res://assets/world/Museum paintings:frames/frames/portrait frame.png" id="13_bn3ch"]
-[ext_resource type="Texture2D" uid="uid://c74fldxs6oo1l" path="res://assets/world/Museum paintings:frames/museumpaintings/3fishpotrait.png" id="14_p1cb8"]
-[ext_resource type="Texture2D" uid="uid://0asis5jt8bma" path="res://assets/world/Museum paintings:frames/museumpaintings/swordfishbiglandscape.png" id="15_fbrlx"]
-[ext_resource type="Texture2D" uid="uid://dlffd0ny8ykdr" path="res://assets/world/Museum paintings:frames/frames/big landscape.png" id="16_p5g4h"]
+[ext_resource type="Texture2D" uid="uid://rwm87mutvw2f" path="res://assets/world/Museum_paintings_frames/frames/32x32 frame.png" id="11_wle02"]
+[ext_resource type="Texture2D" uid="uid://bx1rh83npfivb" path="res://assets/world/Museum_paintings_frames/museumpaintings/clownfish32x32.png" id="12_1cd0e"]
+[ext_resource type="Texture2D" uid="uid://cktpfporwyasl" path="res://assets/world/Museum_paintings_frames/frames/portrait frame.png" id="13_bn3ch"]
+[ext_resource type="Texture2D" uid="uid://c74fldxs6oo1l" path="res://assets/world/Museum_paintings_frames/museumpaintings/3fishpotrait.png" id="14_p1cb8"]
+[ext_resource type="Texture2D" uid="uid://0asis5jt8bma" path="res://assets/world/Museum_paintings_frames/museumpaintings/swordfishbiglandscape.png" id="15_fbrlx"]
+[ext_resource type="Texture2D" uid="uid://dlffd0ny8ykdr" path="res://assets/world/Museum_paintings_frames/frames/big landscape.png" id="16_p5g4h"]
+[ext_resource type="Texture2D" uid="uid://18hrngop4fes" path="res://assets/world/painting2frame.png" id="17_p5g4h"]
+[ext_resource type="Texture2D" uid="uid://bulbe263iqs1m" path="res://assets/world/paintingfishtwo.png" id="18_ly42n"]
+[ext_resource type="Texture2D" uid="uid://cn2treuyo3mlr" path="res://assets/world/fishpaintig1.png" id="19_ktd5f"]
+[ext_resource type="Texture2D" uid="uid://crdlkw3fne3mi" path="res://assets/world/statue2.png" id="20_ly42n"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_ewldt"]
 
@@ -158,6 +162,9 @@ size = Vector2(20, 7)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7jbdj"]
 size = Vector2(63.625, 47.5)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ktd5f"]
+size = Vector2(15, 13)
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ewldt"]
 shader = ExtResource("7_ewldt")
 shader_parameter/outline_color = Color(1, 1, 1, 1)
@@ -243,6 +250,10 @@ shape = SubResource("RectangleShape2D_1cd0e")
 [node name="CollisionShape2D10" type="CollisionShape2D" parent="StaticBody2D" unique_id=214053639]
 position = Vector2(-254.1875, -728.25)
 shape = SubResource("RectangleShape2D_7jbdj")
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="StaticBody2D" unique_id=590773576]
+position = Vector2(-1035, -245)
+shape = SubResource("RectangleShape2D_ktd5f")
 
 [node name="Statue" type="Sprite2D" parent="." unique_id=1143560907]
 z_index = 1
@@ -337,6 +348,7 @@ position = Vector2(-254, -736)
 texture = ExtResource("10_8s7lg")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1838814334]
+position = Vector2(0, 27)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1415555586]
 position = Vector2(-905.5, -532)
@@ -368,12 +380,36 @@ texture = ExtResource("14_p1cb8")
 
 [node name="Swordfishbiglandscape" type="Sprite2D" parent="." unique_id=936870526]
 position = Vector2(303, -546.0001)
-rotation = 3.1450834
+rotation = 3.1415927
+skew = 0.015707964
 texture = ExtResource("15_fbrlx")
 
 [node name="BigLandscape" type="Sprite2D" parent="." unique_id=925918935]
 position = Vector2(303, -546)
 texture = ExtResource("16_p5g4h")
+
+[node name="Painting2Frame" type="Sprite2D" parent="." unique_id=873742002]
+position = Vector2(448, -913)
+texture = ExtResource("17_p5g4h")
+
+[node name="Paintingfishtwo" type="Sprite2D" parent="." unique_id=348378541]
+position = Vector2(448, -913)
+texture = ExtResource("18_ly42n")
+
+[node name="Fishpaintig1" type="Sprite2D" parent="." unique_id=1190598547]
+position = Vector2(586, -715)
+rotation = 1.5707964
+texture = ExtResource("19_ktd5f")
+
+[node name="BigLandscape2" type="Sprite2D" parent="." unique_id=562607430]
+position = Vector2(586, -715)
+rotation = 1.5707964
+texture = ExtResource("16_p5g4h")
+
+[node name="Statue3" type="Sprite2D" parent="." unique_id=1455491124]
+z_index = 1
+position = Vector2(-1035, -254)
+texture = ExtResource("20_ly42n")
 
 [connection signal="body_entered" from="player_painting" to="." method="_on_player_painting_body_entered"]
 [connection signal="body_exited" from="player_painting" to="." method="_on_player_painting_body_exited"]
