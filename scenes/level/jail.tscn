@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://swo6txs4sybj"]
+
+[ext_resource type="PackedScene" uid="uid://b156telh6bhwe" path="res://scenes/player/player.tscn" id="1_d76mu"]
+[ext_resource type="Texture2D" uid="uid://tnli4hbmlfo5" path="res://assets/world/jail.png" id="2_jh2c6"]
+[ext_resource type="PackedScene" uid="uid://wob518n64ad4" path="res://scenes/mobs/fat_guard.tscn" id="3_ix4ex"]
+
+[node name="Jail" type="Node2D" unique_id=421227624]
+
+[node name="Player" parent="." unique_id=1453906378 instance=ExtResource("1_d76mu")]
+position = Vector2(313, 130)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1626181171]
+position = Vector2(309, 120)
+texture = ExtResource("2_jh2c6")
+
+[node name="FatGuard" parent="." unique_id=1527901689 instance=ExtResource("3_ix4ex")]
+position = Vector2(307, 74)

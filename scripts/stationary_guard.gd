@@ -8,10 +8,6 @@ var patrol_speed = 30.0
 @onready var animate = $AnimatedSprite2D
 var update_path_timer := 0.0
 
-var patrol_counter = 0
-var patrol: Array = []
-var patrol_waiting := false
-
 func _ready():
 	await get_tree().physics_frame
 	await get_tree().physics_frame
@@ -20,16 +16,19 @@ func _ready():
 	nav_agent.target_desired_distance = 4.0
 	nav_agent.avoidance_enabled = true
 	
-	patrol = [
-		get_node("../../patrol").global_position,
-		get_node("../../patrol2").global_position,
-		get_node("../../patrol3").global_position,
-		get_node("../../patrol4").global_position
-	]
 	await get_tree().physics_frame
 	$Area2D.body_entered.connect(_on_area_2d_body_entered)
 
 func _physics_process(delta):
+	if not player:
+		for body in $DetectRadius.get_overlapping_bodies():
+			if body.name == "Player" and Gamemanager.stolen_painting:
+				player = body
+				$exclamation.visible = true
+				$Timer.start()
+				await $Timer.timeout
+				$exclamation.visible = false
+				break
 	if player and Gamemanager.stolen_painting:
 		update_path_timer -= delta
 		if update_path_timer <= 0.0:
@@ -40,19 +39,6 @@ func _physics_process(delta):
 			return
 		var next_point = nav_agent.get_next_path_position()
 		velocity = global_position.direction_to(next_point) * run_speed
-	else:
-		if patrol.is_empty() or patrol_waiting:
-			return
-		update_path_timer -= delta
-		if update_path_timer <= 0.0:
-			nav_agent.target_position = patrol[patrol_counter]
-			update_path_timer = 0.2
-		if global_position.distance_to(patrol[patrol_counter]) < 15.0:
-			patrol_waiting = true
-			_next_patrol_point()
-			return
-		var next_point = nav_agent.get_next_path_position()
-		velocity = global_position.direction_to(next_point) * patrol_speed
 	move_and_slide()
 	
 	var direction = velocity.normalized()
@@ -72,15 +58,6 @@ func _physics_process(delta):
 					animate.play("up")
 	else:
 		animate.play("idle")
-
-func _next_patrol_point():
-	await get_tree().create_timer(1.0).timeout
-	if patrol_counter < 3:
-		print("next_stop")
-		patrol_counter += 1
-	else:
-		patrol_counter = 0
-	patrol_waiting = false
 
 func _on_detect_radius_body_entered(body: Node2D) -> void:
 	if body.name == "Player" and Gamemanager.stolen_painting:

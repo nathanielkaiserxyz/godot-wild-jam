@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cdagsgck04uij" path="res://assets/world/statue.png" id="4_ph1ls"]
 [ext_resource type="Texture2D" uid="uid://c1x3lntnowc0h" path="res://assets/world/picture.png" id="5_gndb3"]
 [ext_resource type="Texture2D" uid="uid://dqk6n88f8ceyi" path="res://assets/world/paintingframe.png" id="6_1485u"]
+[ext_resource type="PackedScene" uid="uid://bkyi4vbptxei2" path="res://scenes/mobs/stationary_guard.tscn" id="7_aucog"]
 [ext_resource type="Shader" uid="uid://cg62wprjqj1xv" path="res://assets/outline.gdshader" id="7_ewldt"]
 [ext_resource type="Texture2D" uid="uid://mlhgr3mkyfg5" path="res://assets/world/lettere.png" id="8_8s7lg"]
 [ext_resource type="Texture2D" uid="uid://c5uxh7rdrpx6s" path="res://assets/world/sign.png" id="8_tbwm8"]
@@ -161,7 +162,7 @@ size = Vector2(16, 10)
 size = Vector2(16, 10)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8s7lg"]
-size = Vector2(21.978016, 22.999996)
+size = Vector2(21.978016, 6.499999)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1cd0e"]
 size = Vector2(20, 7)
@@ -177,6 +178,9 @@ size = Vector2(16, 14.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n8kr0"]
 size = Vector2(30, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2cten"]
+size = Vector2(46, 17)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ewldt"]
 shader = ExtResource("7_ewldt")
@@ -194,8 +198,8 @@ shader_parameter/outline_thickness = 1.0
 size = Vector2(24, 28)
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_vk6fv"]
-vertices = PackedVector2Array(-329, -117, -233, -197, -91, -198, -57, -198, 5, -117, -393, -53, 343, -53, 343, 25, 69, 25, -802, 13, -802, -25, 69, -53, 69, -661, 343, -661, 343, -583, 69, -583, -125.38281, -591.5, -125.38281, -657, 39, -421, 69, -391, -123, -391, -329, -405, 5, -421, -930.5, -125.5, -930.5, -156.5, -795, -165, -667, -165, -667, -53, -850, -25, -329, 187, -211, 152, 5, 89, 5, 187, -139, 217, -185, 217, -249, 152, 69, -853, 39, -725, 39, -823, 69, -245, 39, -117, 39, -215, -667, -471, -795, -471, -841, -565, -795, -565, -667, 25, -667, 137, -699, 89.5, -699, 57, 645, -165, 645, 137, 551, 27, 551, -71, 551, -565, 645, -773, 645, -471, 517, -471, 551, -663, 517, -165, 471, -165, 517, -71, 39, -519, -123, -245, 5, -215, -57, -226, 69, 217, 39, 187, 39, 89, -393, -853, 5, -823, 343, -773, 517, -663, 343, 137, 517, 27, 455, 27, 421, 27, 421, -71, -969, 137, -733, 89.5, -329, 89, -249, 127, 5, -519, 517, -565, -91, -226, -267, -197, -329, -215, -267, -225, -761, -565, -761, -663, -667, -583, -211, 127, -329, -503, -207, -591.5, -233, -225, -201, -245, -393, -245, -363, -215, -363, -117, -329, -725, -329, -823, 5, -725, -207, -657, -363, -823, -393, -661, -363, -725, 471, -565, 471, -663, 437, -663, 437, -565, 471, -471, 343, -471, -201, -391, -393, -391, -363, -405, -393, -583, -363, -503, 343, -165, 455, -71, -139, 219, -185, 219, -393, 217, -363, 187, -393, 25, -363, 89, -841, -471, -969, -471, -969, -773, -875, -565, -870, -773, -870, -742.5, -875, -663, -772, -742.5, -772, -773, -667, -773, -667, -661, -733, 57, -850, 13, -795, -663, -841, -663, -963.5, -125.5, -841, -165, -969, -165, -963.5, -156.5)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5), PackedInt32Array(6, 7, 8, 9, 10, 11), PackedInt32Array(12, 13, 14, 15, 16, 17), PackedInt32Array(18, 19, 20, 21, 22), PackedInt32Array(23, 24, 25, 26, 27, 10, 28), PackedInt32Array(29, 30, 31, 32, 33, 34), PackedInt32Array(35, 30, 29), PackedInt32Array(36, 12, 37, 38), PackedInt32Array(39, 11, 40, 41), PackedInt32Array(42, 43, 44, 45), PackedInt32Array(46, 47, 48, 49), PackedInt32Array(50, 51, 52, 53), PackedInt32Array(54, 55, 56, 57), PackedInt32Array(55, 54, 58), PackedInt32Array(59, 50, 53), PackedInt32Array(60, 59, 53, 61), PackedInt32Array(15, 19, 18, 62), PackedInt32Array(63, 39, 41, 64, 65), PackedInt32Array(8, 66, 67, 68), PackedInt32Array(67, 66, 33, 32), PackedInt32Array(69, 36, 38, 70), PackedInt32Array(71, 55, 58, 72), PackedInt32Array(52, 51, 73, 74), PackedInt32Array(75, 74, 73), PackedInt32Array(76, 75, 73), PackedInt32Array(76, 73, 7, 77), PackedInt32Array(48, 47, 78, 79), PackedInt32Array(35, 29, 80, 81), PackedInt32Array(16, 15, 62, 82), PackedInt32Array(83, 54, 57), PackedInt32Array(3, 65, 64, 4), PackedInt32Array(63, 65, 84), PackedInt32Array(85, 1, 0), PackedInt32Array(85, 0, 86, 87), PackedInt32Array(88, 89, 90, 42), PackedInt32Array(31, 30, 91, 8), PackedInt32Array(16, 82, 22, 21, 92, 93), PackedInt32Array(63, 84, 2, 1, 94, 95), PackedInt32Array(96, 95, 94, 87), PackedInt32Array(96, 87, 86, 97), PackedInt32Array(5, 96, 97, 98), PackedInt32Array(99, 100, 70, 101, 17, 102), PackedInt32Array(69, 70, 100), PackedInt32Array(69, 100, 103), PackedInt32Array(104, 69, 103, 105), PackedInt32Array(72, 83, 106, 107), PackedInt32Array(71, 72, 107), PackedInt32Array(71, 107, 108), PackedInt32Array(13, 71, 108, 109), PackedInt32Array(106, 83, 57, 110), PackedInt32Array(57, 59, 60, 110), PackedInt32Array(109, 106, 110, 111), PackedInt32Array(109, 111, 14), PackedInt32Array(13, 109, 14), PackedInt32Array(37, 12, 17, 101), PackedInt32Array(20, 63, 95, 112), PackedInt32Array(21, 20, 112), PackedInt32Array(21, 112, 113, 114), PackedInt32Array(114, 113, 115, 116), PackedInt32Array(6, 117, 60, 77), PackedInt32Array(61, 74, 75, 118, 60), PackedInt32Array(33, 119, 120, 34), PackedInt32Array(29, 34, 121, 122), PackedInt32Array(122, 121, 123, 124), PackedInt32Array(125, 126, 127, 128), PackedInt32Array(127, 129, 130, 131), PackedInt32Array(132, 133, 134, 135, 89), PackedInt32Array(60, 118, 77), PackedInt32Array(6, 77, 7), PackedInt32Array(136, 79, 78, 137, 9), PackedInt32Array(105, 99, 102, 93, 92, 116, 115, 104), PackedInt32Array(104, 115, 90, 135), PackedInt32Array(135, 90, 89), PackedInt32Array(132, 89, 138, 130), PackedInt32Array(5, 98, 0), PackedInt32Array(4, 40, 11, 5), PackedInt32Array(8, 68, 31), PackedInt32Array(80, 124, 123, 8), PackedInt32Array(128, 44, 43, 125), PackedInt32Array(45, 88, 42), PackedInt32Array(138, 45, 44, 139), PackedInt32Array(130, 138, 139), PackedInt32Array(130, 139, 131), PackedInt32Array(5, 11, 10), PackedInt32Array(27, 5, 10), PackedInt32Array(140, 23, 28, 137, 78), PackedInt32Array(46, 49, 136, 9), PackedInt32Array(127, 131, 128), PackedInt32Array(125, 43, 25, 141), PackedInt32Array(141, 25, 24), PackedInt32Array(142, 141, 24, 143), PackedInt32Array(78, 142, 143, 140), PackedInt32Array(91, 81, 80, 8), PackedInt32Array(9, 8, 123), PackedInt32Array(46, 9, 123)])
+vertices = PackedVector2Array(-329, -117, -233, -197, -91, -198, -57, -198, 5, -117, -393, -53, 343, -53, 343, 25, 69, 25, -802, 13, -802, -25, 69, -53, 69, -661, 343, -661, 343, -583, 69, -583, -125.38281, -591.5, -125.38281, -657, 39, -421, 69, -391, -123, -391, -329, -405, 5, -421, -930.5, -125.5, -930.5, -156.5, -795, -165, -667, -165, -667, -53, -850, -25, -329, 187, -211, 152, 5, 89, 5, 187, -139, 217, -185, 217, -249, 152, 69, -853, 39, -725, 39, -823, 69, -245, 39, -117, 39, -215, -667, -471, -795, -471, -841, -565, -795, -565, -667, 25, -667, 137, -699, 89.5, -699, 57, 645, -165, 645, 137, 551, 27, 551, -71, 551, -565, 645, -773, 645, -471, 517, -471, 551, -663, 517, -165, 471, -165, 517, -71, 39, -519, -123, -245, 5, -215, -57, -226, 69, 217, 39, 187, 39, 89, -393, -853, 5, -823, 343, -773, 517, -663, 343, 137, 517, 27, 455, 27, 421, 27, 421, -71, -969, 137, -733, 89.5, -329, 89, -249, 127, 5, -519, 517, -565, -772, -742.5, -772, -767, -667, -773, -667, -661, -761, -663, -969, -773, -870, -767, -91, -226, -267, -197, -329, -215, -267, -225, -761, -565, -667, -583, -211, 127, -969, -471, -870, -742.5, -875, -663, -329, -503, -207, -591.5, -233, -225, -201, -245, -393, -245, -363, -215, -363, -117, -329, -725, -329, -823, 5, -725, -207, -657, -363, -823, -393, -661, -363, -725, 471, -565, 471, -663, 437, -663, 437, -565, 471, -471, 343, -471, -201, -391, -393, -391, -363, -405, -393, -583, -363, -503, 343, -165, 455, -71, -139, 219, -185, 219, -393, 217, -363, 187, -393, 25, -363, 89, -733, 57, -850, 13, -795, -663, -875, -565, -841, -471, -841, -663, -841, -165, -969, -165, -963.5, -156.5, -963.5, -125.5)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5), PackedInt32Array(6, 7, 8, 9, 10, 11), PackedInt32Array(12, 13, 14, 15, 16, 17), PackedInt32Array(18, 19, 20, 21, 22), PackedInt32Array(23, 24, 25, 26, 27, 10, 28), PackedInt32Array(29, 30, 31, 32, 33, 34), PackedInt32Array(35, 30, 29), PackedInt32Array(36, 12, 37, 38), PackedInt32Array(39, 11, 40, 41), PackedInt32Array(42, 43, 44, 45), PackedInt32Array(46, 47, 48, 49), PackedInt32Array(50, 51, 52, 53), PackedInt32Array(54, 55, 56, 57), PackedInt32Array(55, 54, 58), PackedInt32Array(59, 50, 53), PackedInt32Array(60, 59, 53, 61), PackedInt32Array(15, 19, 18, 62), PackedInt32Array(63, 39, 41, 64, 65), PackedInt32Array(8, 66, 67, 68), PackedInt32Array(67, 66, 33, 32), PackedInt32Array(69, 36, 38, 70), PackedInt32Array(71, 55, 58, 72), PackedInt32Array(52, 51, 73, 74), PackedInt32Array(75, 74, 73), PackedInt32Array(76, 75, 73), PackedInt32Array(76, 73, 7, 77), PackedInt32Array(48, 47, 78, 79), PackedInt32Array(35, 29, 80, 81), PackedInt32Array(16, 15, 62, 82), PackedInt32Array(83, 54, 57), PackedInt32Array(84, 85, 86, 87, 88), PackedInt32Array(89, 86, 85, 90), PackedInt32Array(3, 65, 64, 4), PackedInt32Array(63, 65, 91), PackedInt32Array(92, 1, 0), PackedInt32Array(92, 0, 93, 94), PackedInt32Array(95, 88, 96, 42), PackedInt32Array(31, 30, 97, 8), PackedInt32Array(98, 89, 90, 99, 100), PackedInt32Array(16, 82, 22, 21, 101, 102), PackedInt32Array(63, 91, 2, 1, 103, 104), PackedInt32Array(105, 104, 103, 94), PackedInt32Array(105, 94, 93, 106), PackedInt32Array(5, 105, 106, 107), PackedInt32Array(108, 109, 70, 110, 17, 111), PackedInt32Array(69, 70, 109), PackedInt32Array(69, 109, 112), PackedInt32Array(113, 69, 112, 114), PackedInt32Array(72, 83, 115, 116), PackedInt32Array(71, 72, 116), PackedInt32Array(71, 116, 117), PackedInt32Array(13, 71, 117, 118), PackedInt32Array(115, 83, 57, 119), PackedInt32Array(57, 59, 60, 119), PackedInt32Array(118, 115, 119, 120), PackedInt32Array(118, 120, 14), PackedInt32Array(13, 118, 14), PackedInt32Array(37, 12, 17, 110), PackedInt32Array(20, 63, 104, 121), PackedInt32Array(21, 20, 121), PackedInt32Array(21, 121, 122, 123), PackedInt32Array(123, 122, 124, 125), PackedInt32Array(6, 126, 60, 77), PackedInt32Array(61, 74, 75, 127, 60), PackedInt32Array(33, 128, 129, 34), PackedInt32Array(29, 34, 130, 131), PackedInt32Array(131, 130, 132, 133), PackedInt32Array(60, 127, 77), PackedInt32Array(6, 77, 7), PackedInt32Array(134, 79, 78, 135, 9), PackedInt32Array(114, 108, 111, 102, 101, 125, 124, 113), PackedInt32Array(113, 124, 96, 87), PackedInt32Array(87, 96, 88), PackedInt32Array(84, 88, 136, 99), PackedInt32Array(5, 107, 0), PackedInt32Array(4, 40, 11, 5), PackedInt32Array(8, 68, 31), PackedInt32Array(80, 133, 132, 8), PackedInt32Array(137, 44, 43, 138), PackedInt32Array(45, 95, 42), PackedInt32Array(136, 45, 44, 139), PackedInt32Array(99, 136, 139), PackedInt32Array(99, 139, 100), PackedInt32Array(98, 100, 137), PackedInt32Array(138, 98, 137), PackedInt32Array(138, 43, 25, 140), PackedInt32Array(140, 25, 24), PackedInt32Array(141, 140, 24, 142), PackedInt32Array(78, 141, 142, 143), PackedInt32Array(78, 143, 23, 28, 135), PackedInt32Array(5, 11, 10), PackedInt32Array(27, 5, 10), PackedInt32Array(46, 49, 134, 9), PackedInt32Array(97, 81, 80, 8), PackedInt32Array(9, 8, 132), PackedInt32Array(46, 9, 132)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-1147, -1017, 862, -1019, 858, 358, -1151, 355)])
 source_geometry_mode = 1
 source_geometry_group_name = &"navigation"
@@ -207,11 +211,37 @@ size = Vector2(67, 20)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bn3ch"]
 size = Vector2(20, 100)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ysjw1"]
+size = Vector2(36, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ct8cy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2ry7d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jhoxr"]
+size = Vector2(29, 58)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0sv6b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g60fx"]
+size = Vector2(35, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6xh0d"]
+size = Vector2(37, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4pjx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ltigo"]
+size = Vector2(41, 11.650167)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aucog"]
+size = Vector2(64, 10)
+
 [node name="FloorOne" type="Node2D" unique_id=2052286030]
 script = ExtResource("1_kvfjg")
 
 [node name="Guard" parent="." unique_id=136804232 instance=ExtResource("1_lp6xf")]
-position = Vector2(409, -98)
+position = Vector2(402, -95)
 
 [node name="Player" parent="." unique_id=1453906378 instance=ExtResource("2_cdhq6")]
 position = Vector2(-248, 106)
@@ -252,7 +282,7 @@ position = Vector2(-338, -315)
 shape = SubResource("RectangleShape2D_tbwm8")
 
 [node name="CollisionShape2D8" type="CollisionShape2D" parent="StaticBody2D" unique_id=1846229676]
-position = Vector2(-909, -867)
+position = Vector2(-909, -858.75)
 scale = Vector2(3.64, 1)
 shape = SubResource("RectangleShape2D_8s7lg")
 
@@ -272,18 +302,24 @@ shape = SubResource("RectangleShape2D_ktd5f")
 position = Vector2(-804, -30.75)
 shape = SubResource("RectangleShape2D_gndb3")
 
-[node name="Picture" type="Sprite2D" parent="StaticBody2D" unique_id=196238066]
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="StaticBody2D" unique_id=991930036]
+position = Vector2(-914, -110)
+shape = SubResource("RectangleShape2D_n8kr0")
+
+[node name="house_painting" type="Sprite2D" parent="." unique_id=196238066]
 position = Vector2(576, -210)
 rotation = 1.5707964
 texture = ExtResource("5_gndb3")
 
-[node name="Painting2Frame" type="Sprite2D" parent="StaticBody2D" unique_id=1212568666]
+[node name="house_painting" type="Area2D" parent="house_painting" unique_id=1208112605]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="house_painting/house_painting" unique_id=1993396198]
+position = Vector2(-1, 18)
+shape = SubResource("RectangleShape2D_2cten")
+
+[node name="Painting2Frame2" type="Sprite2D" parent="." unique_id=1212568666]
 position = Vector2(585, -211)
 texture = ExtResource("17_p5g4h")
-
-[node name="CollisionShape2D13" type="CollisionShape2D" parent="StaticBody2D" unique_id=991930036]
-position = Vector2(-914, -110)
-shape = SubResource("RectangleShape2D_n8kr0")
 
 [node name="Statue" type="Sprite2D" parent="." unique_id=1143560907]
 z_index = 1
@@ -403,19 +439,38 @@ position = Vector2(225, -843)
 rotation = -1.5707964
 texture = ExtResource("12_1cd0e")
 
+[node name="clownfish32x32" type="Area2D" parent="Clownfish32x32" unique_id=1659858247]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Clownfish32x32/clownfish32x32" unique_id=1659176543]
+position = Vector2(0, 26)
+shape = SubResource("RectangleShape2D_ysjw1")
+
 [node name="PortraitFrame" type="Sprite2D" parent="." unique_id=1082662774]
 position = Vector2(326, -906)
 texture = ExtResource("13_bn3ch")
 
-[node name="3Fishpotrait" type="Sprite2D" parent="." unique_id=1980245601]
+[node name="threeFishpotrait" type="Sprite2D" parent="." unique_id=1980245601]
 position = Vector2(326, -906)
 texture = ExtResource("14_p1cb8")
+
+[node name="3fishportrait" type="Area2D" parent="threeFishpotrait" unique_id=1232521239]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="threeFishpotrait/3fishportrait" unique_id=1121435179]
+position = Vector2(0, 29)
+shape = SubResource("RectangleShape2D_ct8cy")
 
 [node name="Swordfishbiglandscape" type="Sprite2D" parent="." unique_id=936870526]
 position = Vector2(303, -546.0001)
 rotation = 3.1415927
 skew = 0.015707964
 texture = ExtResource("15_fbrlx")
+
+[node name="swordfishlandscape" type="Area2D" parent="Swordfishbiglandscape" unique_id=603820313]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Swordfishbiglandscape/swordfishlandscape" unique_id=87019196]
+position = Vector2(0.48698786, 31.003702)
+scale = Vector2(2.5971665, 1.1078186)
+shape = SubResource("RectangleShape2D_2ry7d")
 
 [node name="BigLandscape" type="Sprite2D" parent="." unique_id=925918935]
 position = Vector2(303, -546)
@@ -425,6 +480,13 @@ texture = ExtResource("16_p5g4h")
 position = Vector2(448, -913)
 texture = ExtResource("17_p5g4h")
 
+[node name="two_fish_painting" type="Area2D" parent="Painting2Frame" unique_id=420836844]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Painting2Frame/two_fish_painting" unique_id=1063349422]
+position = Vector2(1, 27)
+scale = Vector2(1.6235442, 0.5024528)
+shape = SubResource("RectangleShape2D_jhoxr")
+
 [node name="Paintingfishtwo" type="Sprite2D" parent="." unique_id=348378541]
 position = Vector2(448, -913)
 texture = ExtResource("18_ly42n")
@@ -433,6 +495,13 @@ texture = ExtResource("18_ly42n")
 position = Vector2(586, -715)
 rotation = 1.5707964
 texture = ExtResource("19_ktd5f")
+
+[node name="fish_painting" type="Area2D" parent="Fishpaintig1" unique_id=1639707915]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fishpaintig1/fish_painting" unique_id=1320934332]
+position = Vector2(1.0000012, 30)
+scale = Vector2(2.3999977, 1)
+shape = SubResource("RectangleShape2D_0sv6b")
 
 [node name="BigLandscape2" type="Sprite2D" parent="." unique_id=562607430]
 position = Vector2(586, -715)
@@ -449,6 +518,12 @@ position = Vector2(347, -601)
 rotation = 1.5707964
 texture = ExtResource("21_ktd5f")
 
+[node name="moor" type="Area2D" parent="moorishidol" unique_id=173534948]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="moorishidol/moor" unique_id=1960698693]
+position = Vector2(-240.5, -209.99997)
+shape = SubResource("RectangleShape2D_g60fx")
+
 [node name="32x32Frame2" type="Sprite2D" parent="." unique_id=1676520655]
 position = Vector2(587, -841)
 texture = ExtResource("11_wle02")
@@ -462,6 +537,12 @@ texture = ExtResource("22_ge8bx")
 position = Vector2(304, -299)
 texture = ExtResource("24_j3q48")
 
+[node name="countryroad" type="Area2D" parent="Nighttimecountryroad" unique_id=1721826978]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Nighttimecountryroad/countryroad" unique_id=665569698]
+position = Vector2(1.5, 32)
+shape = SubResource("RectangleShape2D_6xh0d")
+
 [node name="32x32Frame3" type="Sprite2D" parent="." unique_id=1700008383]
 position = Vector2(304, -299)
 texture = ExtResource("11_wle02")
@@ -470,6 +551,13 @@ texture = ExtResource("11_wle02")
 position = Vector2(578, -48)
 rotation = 1.5707964
 texture = ExtResource("25_n8kr0")
+
+[node name="still_life" type="Area2D" parent="Stilllife" unique_id=1059954003]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stilllife/still_life" unique_id=2059959190]
+position = Vector2(7.430936e-07, 17)
+scale = Vector2(1.8513854, -0.7609899)
+shape = SubResource("RectangleShape2D_g4pjx")
 
 [node name="PortraitFrame2" type="Sprite2D" parent="." unique_id=1811733068]
 position = Vector2(578, -48)
@@ -480,6 +568,13 @@ position = Vector2(404, 63)
 rotation = 3.1415927
 texture = ExtResource("26_aucog")
 
+[node name="boat" type="Area2D" parent="Boat" unique_id=1986982154]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boat/boat" unique_id=416777049]
+position = Vector2(0.5, 20.350018)
+scale = Vector2(1, -3.0299964)
+shape = SubResource("RectangleShape2D_ltigo")
+
 [node name="32x32Frame4" type="Sprite2D" parent="." unique_id=209566184]
 position = Vector2(404, 63)
 texture = ExtResource("11_wle02")
@@ -488,11 +583,47 @@ texture = ExtResource("11_wle02")
 position = Vector2(-914, -133)
 texture = ExtResource("27_n8kr0")
 
+[node name="stationary_guard" parent="." unique_id=1194881383 instance=ExtResource("7_aucog")]
+position = Vector2(-835, -842)
+
+[node name="stationary_guard2" parent="." unique_id=1337918756 instance=ExtResource("7_aucog")]
+position = Vector2(-343, 95)
+
+[node name="leave" type="Area2D" parent="." unique_id=1381938019]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="leave" unique_id=1375853120]
+position = Vector2(-249, 126)
+shape = SubResource("RectangleShape2D_aucog")
+
+[node name="stationary_guard3" parent="." unique_id=1390401308 instance=ExtResource("7_aucog")]
+position = Vector2(-962, -86)
+
+[connection signal="body_entered" from="house_painting/house_painting" to="." method="_on_house_painting_body_entered"]
+[connection signal="body_exited" from="house_painting/house_painting" to="." method="_on_house_painting_body_exited"]
 [connection signal="body_entered" from="player_painting" to="." method="_on_player_painting_body_entered"]
 [connection signal="body_exited" from="player_painting" to="." method="_on_player_painting_body_exited"]
 [connection signal="body_entered" from="player_painting_sign" to="." method="_on_player_painting_sign_body_entered"]
 [connection signal="body_exited" from="player_painting_sign" to="." method="_on_player_painting_sign_body_exited"]
 [connection signal="pressed" from="player_painting_sign/player_sign/player_sign/Button" to="." method="_on_button_pressed"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Clownfish32x32/clownfish32x32" to="." method="_on_clownfish_32x_32_body_entered"]
+[connection signal="body_exited" from="Clownfish32x32/clownfish32x32" to="." method="_on_clownfish_32x_32_body_exited"]
+[connection signal="body_entered" from="threeFishpotrait/3fishportrait" to="." method="_on_fishportrait_body_entered"]
+[connection signal="body_exited" from="threeFishpotrait/3fishportrait" to="." method="_on_fishportrait_body_exited"]
+[connection signal="body_entered" from="Swordfishbiglandscape/swordfishlandscape" to="." method="_on_swordfishlandscape_body_entered"]
+[connection signal="body_exited" from="Swordfishbiglandscape/swordfishlandscape" to="." method="_on_swordfishlandscape_body_exited"]
+[connection signal="body_entered" from="Painting2Frame/two_fish_painting" to="." method="_on_two_fish_painting_body_entered"]
+[connection signal="body_exited" from="Painting2Frame/two_fish_painting" to="." method="_on_two_fish_painting_body_exited"]
+[connection signal="body_entered" from="Fishpaintig1/fish_painting" to="." method="_on_fish_painting_body_entered"]
+[connection signal="body_exited" from="Fishpaintig1/fish_painting" to="." method="_on_fish_painting_body_exited"]
+[connection signal="body_entered" from="moorishidol/moor" to="." method="_on_moor_body_entered"]
+[connection signal="body_exited" from="moorishidol/moor" to="." method="_on_moor_body_exited"]
+[connection signal="body_entered" from="Nighttimecountryroad/countryroad" to="." method="_on_countryroad_body_entered"]
+[connection signal="body_exited" from="Nighttimecountryroad/countryroad" to="." method="_on_countryroad_body_exited"]
+[connection signal="body_entered" from="Stilllife/still_life" to="." method="_on_still_life_body_entered"]
+[connection signal="body_exited" from="Stilllife/still_life" to="." method="_on_still_life_body_exited"]
+[connection signal="body_entered" from="Boat/boat" to="." method="_on_boat_body_entered"]
+[connection signal="body_exited" from="Boat/boat" to="." method="_on_boat_body_exited"]
+[connection signal="body_entered" from="leave" to="." method="_on_leave_body_entered"]
 
 [editable path="Guard"]

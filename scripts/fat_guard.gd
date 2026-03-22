@@ -17,14 +17,28 @@ func _on_body_exited(body):
 		player_in_range = false
 
 func _process(_delta):
-	if player_in_range and Input.is_action_just_pressed("interact") and !player_in_dialogue:
+	if player_in_range and Input.is_action_just_pressed("interact") and !player_in_dialogue and Gamemanager.first_time_in_museum:
 		Gamemanager.player_movable = false
 		player_in_dialogue = true
 		DialogueManager.show_example_dialogue_balloon(load("res://dialogue/guard_outside_museum.dialogue"), "start")
 		await DialogueManager.dialogue_ended
 		player_in_dialogue = false
 		Gamemanager.player_movable = true
-	
+	elif player_in_range and Input.is_action_just_pressed("interact") and !player_in_dialogue and Gamemanager.player_in_jail:
+		Gamemanager.player_movable = false
+		player_in_dialogue = true
+		DialogueManager.show_example_dialogue_balloon(load("res://dialogue/player_in_jail.dialogue"), "start")
+		await DialogueManager.dialogue_ended
+		player_in_dialogue = false
+		Gamemanager.player_movable = true
+	elif player_in_range and Input.is_action_just_pressed("interact") and !player_in_dialogue:
+		Gamemanager.player_movable = false
+		player_in_dialogue = true
+		DialogueManager.show_example_dialogue_balloon(load("res://dialogue/guard_outside_museum_second_time.dialogue"), "start")
+		await DialogueManager.dialogue_ended
+		player_in_dialogue = false
+		Gamemanager.player_movable = true
+		
 	if player_in_range:
 		$AnimatedSprite2D.material = shader_material
 	else:

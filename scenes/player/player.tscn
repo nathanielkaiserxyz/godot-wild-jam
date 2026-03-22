@@ -227,6 +227,22 @@ region = Rect2(96, 0, 16, 16)
 atlas = ExtResource("3_gmlin")
 region = Rect2(112, 0, 16, 16)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_a38bk"]
+atlas = ExtResource("3_gmlin")
+region = Rect2(128, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3chqh"]
+atlas = ExtResource("3_gmlin")
+region = Rect2(144, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pwfqx"]
+atlas = ExtResource("3_gmlin")
+region = Rect2(160, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kssj8"]
+atlas = ExtResource("3_gmlin")
+region = Rect2(176, 0, 16, 16)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_75vfm"]
 atlas = ExtResource("2_gmlin")
 region = Rect2(64, 0, 16, 16)
@@ -481,7 +497,19 @@ animations = [{
 "name": &"robber_run",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a38bk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3chqh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pwfqx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kssj8")
+}],
 "loop": true,
 "name": &"robber_up",
 "speed": 5.0
@@ -534,7 +562,7 @@ shape = SubResource("RectangleShape2D_lvxji")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player" unique_id=2110100891]
 sprite_frames = SubResource("SpriteFrames_p47bc")
-animation = &"robber_flip_down"
+animation = &"robber_down"
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1654703418]
 zoom = Vector2(2, 2)

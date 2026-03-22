@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://clqy6rum6nvmq"
+path="res://.godot/imported/guard_outside_museum_second_time.dialogue-5e125ff55576f0a0ede0f34e5fd8f1c4.tres"
+
+[deps]
+
+source_file="res://dialogue/guard_outside_museum_second_time.dialogue"
+dest_files=["res://.godot/imported/guard_outside_museum_second_time.dialogue-5e125ff55576f0a0ede0f34e5fd8f1c4.tres"]
+
+[params]
+
+defaults=true

@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bxexx6l8q66k8"
+path="res://.godot/imported/player_in_jail.dialogue-21a1fac4ec10bae7498fdee94bedb653.tres"
+
+[deps]
+
+source_file="res://dialogue/player_in_jail.dialogue"
+dest_files=["res://.godot/imported/player_in_jail.dialogue-21a1fac4ec10bae7498fdee94bedb653.tres"]
+
+[params]
+
+defaults=true

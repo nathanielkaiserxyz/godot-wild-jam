@@ -1,18 +1,25 @@
 extends Node
 
-
-
 #player specific facts
 @export var already_sold_painting_to_museum : bool = false
 @export var player_movable: bool = true
 @export var stolen_painting: bool = false
 @export var first_time_in_museum: bool = true
 @export var player_robber: bool = false
-
+@export var player_in_jail: bool = false
 
 #paintings stolen status
 @export var player_drawing_visible: bool = true
-
+@export var player_clownfish_visible: bool = true
+@export var player_threefishportrait_visible: bool = true
+@export var player_swordfish_landscape_visible: bool = true
+@export var player_two_fish_landscape_visible: bool = true
+@export var player_moor_visible: bool = true
+@export var player_fish_painting_portrait_visible: bool = true
+@export var player_night_time_country_visible: bool = true
+@export var player_house_painting_visible: bool = true
+@export var player_still_life_visible: bool = true
+@export var player_boat_visible: bool = true
 
 #scenes that get played once
 @export var bottom_right: bool = false
@@ -31,7 +38,9 @@ var levels = [
 	"res://scenes/level/floor_one.tscn",
 	"res://scenes/level/floor_two.tscn",
 	"res://scenes/level/options.tscn",
-	"res://scenes/level/apartment2.tscn"
+	"res://scenes/level/apartment2.tscn",
+	"res://scenes/level/jail.tscn",
+	"res://scenes/level/apartment3.tscn" # 7
 ]
 
 func load_level(index: int, from_position: Vector2 = Vector2.ZERO):

@@ -37,6 +37,9 @@ size = Vector2(30, 29)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yhun7"]
 size = Vector2(16.5, 19.5)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_56p0n"]
+size = Vector2(46, 44)
+
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_4colt"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_56p0n"]
@@ -125,6 +128,10 @@ position = Vector2(238, 158)
 scale = Vector2(1, 0.64451003)
 shape = SubResource("RectangleShape2D_yhun7")
 
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="StaticBody2D" unique_id=1022100538]
+position = Vector2(235, 14)
+shape = SubResource("RectangleShape2D_56p0n")
+
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1367205907]
 
 [node name="StudioApartment" type="Sprite2D" parent="." unique_id=173482930]
@@ -153,7 +160,6 @@ texture = ExtResource("4_4colt")
 
 [connection signal="body_entered" from="easel" to="easel" method="_on_body_entered"]
 [connection signal="body_exited" from="easel" to="easel" method="_on_body_exited"]
-[connection signal="area_entered" from="leave" to="easel" method="_on_leave_area_entered"]
-[connection signal="body_entered" from="leave" to="easel" method="_on_leave_body_entered"]
+[connection signal="body_entered" from="leave" to="desk" method="_on_leave_body_entered"]
 [connection signal="body_entered" from="desk" to="desk" method="_on_body_entered"]
 [connection signal="body_exited" from="desk" to="desk" method="_on_body_exited"]

@@ -1,0 +1,283 @@
+[gd_scene format=3 uid="uid://capps2eg10wpy"]
+
+[ext_resource type="PackedScene" uid="uid://b156telh6bhwe" path="res://scenes/player/player.tscn" id="1_1wwbc"]
+[ext_resource type="Script" uid="uid://d07u71dqmwxbm" path="res://scripts/final_level.gd" id="2_1wwbc"]
+[ext_resource type="Texture2D" uid="uid://l41f3m10bi2e" path="res://assets/world/easel.png" id="2_3qaq5"]
+[ext_resource type="Texture2D" uid="uid://mlhgr3mkyfg5" path="res://assets/world/lettere.png" id="3_6dxs2"]
+[ext_resource type="Texture2D" uid="uid://df2fmq6s0jcyr" path="res://assets/world/studio apartment.png" id="4_keq14"]
+[ext_resource type="Texture2D" uid="uid://dqk6n88f8ceyi" path="res://assets/world/paintingframe.png" id="4_tm6hy"]
+[ext_resource type="Script" uid="uid://bt7ivnhnn71mf" path="res://scripts/final_level_drawing_ui.gd" id="6_3qaq5"]
+[ext_resource type="Shader" uid="uid://cg62wprjqj1xv" path="res://assets/outline.gdshader" id="6_nkiqn"]
+[ext_resource type="Texture2D" uid="uid://rwm87mutvw2f" path="res://assets/world/Museum_paintings_frames/frames/32x32 frame.png" id="9_keq14"]
+[ext_resource type="Texture2D" uid="uid://bx1rh83npfivb" path="res://assets/world/Museum_paintings_frames/museumpaintings/clownfish32x32.png" id="10_3hmjl"]
+[ext_resource type="Texture2D" uid="uid://cktpfporwyasl" path="res://assets/world/Museum_paintings_frames/frames/portrait frame.png" id="11_nkiqn"]
+[ext_resource type="Texture2D" uid="uid://c74fldxs6oo1l" path="res://assets/world/Museum_paintings_frames/museumpaintings/3fishpotrait.png" id="12_muj40"]
+[ext_resource type="Texture2D" uid="uid://0asis5jt8bma" path="res://assets/world/Museum_paintings_frames/museumpaintings/swordfishbiglandscape.png" id="13_nchrw"]
+[ext_resource type="Texture2D" uid="uid://dlffd0ny8ykdr" path="res://assets/world/Museum_paintings_frames/frames/big landscape.png" id="14_auerf"]
+[ext_resource type="Texture2D" uid="uid://bulbe263iqs1m" path="res://assets/world/paintingfishtwo.png" id="15_xpaby"]
+[ext_resource type="Texture2D" uid="uid://18hrngop4fes" path="res://assets/world/painting2frame.png" id="16_lacnl"]
+[ext_resource type="Texture2D" uid="uid://buaq7xfujdxn3" path="res://assets/world/moorishidol.png" id="17_lacnl"]
+[ext_resource type="Texture2D" uid="uid://cn2treuyo3mlr" path="res://assets/world/fishpaintig1.png" id="18_3rfo7"]
+[ext_resource type="Texture2D" uid="uid://dkmq0tbj2yt2d" path="res://assets/world/Museum_paintings_frames/museumpaintings/nighttimecountryroad.png" id="19_g5am4"]
+[ext_resource type="Texture2D" uid="uid://c1x3lntnowc0h" path="res://assets/world/picture.png" id="20_ofwxd"]
+[ext_resource type="Texture2D" uid="uid://b0dcwejs6eml8" path="res://assets/world/Museum_paintings_frames/museumpaintings/stilllife.png" id="21_yj31f"]
+[ext_resource type="Texture2D" uid="uid://bbl4v7bwi1c3n" path="res://assets/world/Museum_paintings_frames/museumpaintings/boat.png" id="22_85mmw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gclxb"]
+size = Vector2(39, 37)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tp0un"]
+shader = ExtResource("6_nkiqn")
+shader_parameter/outline_color = Color(1, 1, 1, 1)
+shader_parameter/outline_thickness = 1.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1rs3f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3e2wr"]
+size = Vector2(20, 243)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dry0p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tp0un"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oftp4"]
+size = Vector2(30, 25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ue8ih"]
+size = Vector2(20, 31)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fm5n5"]
+size = Vector2(30, 29)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2dl6d"]
+size = Vector2(44, 29)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gfxbw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yhun7"]
+size = Vector2(16.5, 19.5)
+
+[node name="aparment3" type="Node2D" unique_id=225717566]
+
+[node name="Player" parent="." unique_id=1453906378 instance=ExtResource("1_1wwbc")]
+z_index = 2
+position = Vector2(129, 150)
+
+[node name="easel" type="Area2D" parent="." unique_id=1420443429]
+z_index = 1
+script = ExtResource("2_1wwbc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="easel" unique_id=1118662099]
+visibility_layer = 2
+position = Vector2(188.5, 18.5)
+shape = SubResource("RectangleShape2D_gclxb")
+
+[node name="easel" type="Sprite2D" parent="easel" unique_id=378053745]
+visibility_layer = 2
+material = SubResource("ShaderMaterial_tp0un")
+position = Vector2(190, 17)
+texture = ExtResource("2_3qaq5")
+
+[node name="lettere" type="Sprite2D" parent="easel" unique_id=1274481537]
+position = Vector2(176, 5)
+texture = ExtResource("3_6dxs2")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1006321302]
+layer = 2
+
+[node name="Drawing_UI" type="Control" parent="CanvasLayer" unique_id=207785635]
+process_mode = 3
+visible = false
+z_index = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("6_3qaq5")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Drawing_UI" unique_id=697614881]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 34.0
+offset_right = 51.0
+offset_bottom = 74.0
+scale = Vector2(7.707457, 7.2177525)
+mouse_filter = 2
+
+[node name="close_button" type="Button" parent="CanvasLayer/Drawing_UI" unique_id=1502694325]
+layout_mode = 0
+offset_left = 346.0
+offset_top = 291.0
+offset_right = 394.0
+offset_bottom = 322.0
+text = "close"
+
+[node name="submit_museum" type="Button" parent="CanvasLayer/Drawing_UI" unique_id=1205071072]
+layout_mode = 0
+offset_left = 346.0
+offset_top = 251.0
+offset_right = 505.0
+offset_bottom = 282.0
+text = "enjoy your art on the wall"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1082764560]
+position = Vector2(-2, -5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=148566912]
+position = Vector2(197.99998, 9)
+scale = Vector2(26.631529, 0.8279326)
+shape = SubResource("RectangleShape2D_1rs3f")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=1141683351]
+position = Vector2(97, 112)
+scale = Vector2(-1.656055, 1)
+shape = SubResource("RectangleShape2D_3e2wr")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=1018656649]
+position = Vector2(193.99998, 176.99998)
+scale = Vector2(12.124277, -1.0763236)
+shape = SubResource("RectangleShape2D_dry0p")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=2144129097]
+position = Vector2(272.00003, 121)
+scale = Vector2(1.0320443, 16.311993)
+shape = SubResource("RectangleShape2D_tp0un")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D" unique_id=413638222]
+position = Vector2(133, 130.5)
+shape = SubResource("RectangleShape2D_oftp4")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D" unique_id=1229471769]
+position = Vector2(122, 35.5)
+shape = SubResource("RectangleShape2D_ue8ih")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D" unique_id=928154537]
+position = Vector2(189, 24.5)
+shape = SubResource("RectangleShape2D_fm5n5")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="StaticBody2D" unique_id=1756698602]
+position = Vector2(236, 16)
+shape = SubResource("RectangleShape2D_2dl6d")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="StaticBody2D" unique_id=1828746550]
+position = Vector2(252, 148)
+scale = Vector2(-0.76641816, 1.5278946)
+shape = SubResource("RectangleShape2D_gfxbw")
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="StaticBody2D" unique_id=1477434830]
+position = Vector2(238, 158)
+scale = Vector2(1, 0.64451003)
+shape = SubResource("RectangleShape2D_yhun7")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1367205907]
+
+[node name="StudioApartment" type="Sprite2D" parent="." unique_id=173482930]
+position = Vector2(186, 88)
+texture = ExtResource("4_keq14")
+
+[node name="player_frame" type="Sprite2D" parent="." unique_id=2138597063]
+position = Vector2(138, -42)
+texture = ExtResource("4_tm6hy")
+
+[node name="player_art" type="Sprite2D" parent="player_frame" unique_id=1561642944]
+z_index = 3
+
+[node name="clownfish_frame" type="Sprite2D" parent="." unique_id=589109878]
+position = Vector2(204, -27)
+texture = ExtResource("9_keq14")
+
+[node name="clownfish32x32" type="Sprite2D" parent="." unique_id=1024899234]
+visible = false
+position = Vector2(204, -27)
+texture = ExtResource("10_3hmjl")
+
+[node name="threefishportraitframe" type="Sprite2D" parent="." unique_id=1804497954]
+position = Vector2(241, -26)
+texture = ExtResource("11_nkiqn")
+
+[node name="threefishportrait" type="Sprite2D" parent="." unique_id=1325585846]
+visible = false
+position = Vector2(241, -26)
+texture = ExtResource("12_muj40")
+
+[node name="swordfish" type="Sprite2D" parent="." unique_id=1419930499]
+visible = false
+position = Vector2(307, 50)
+texture = ExtResource("13_nchrw")
+
+[node name="swardfishframe" type="Sprite2D" parent="." unique_id=549936589]
+position = Vector2(307, 50)
+texture = ExtResource("14_auerf")
+
+[node name="twofishportrait" type="Sprite2D" parent="." unique_id=420103154]
+visible = false
+position = Vector2(301, 105)
+texture = ExtResource("15_xpaby")
+
+[node name="twofishframe" type="Sprite2D" parent="." unique_id=1841642508]
+position = Vector2(301, 105)
+texture = ExtResource("16_lacnl")
+
+[node name="moorframe" type="Sprite2D" parent="." unique_id=667812056]
+position = Vector2(306, 2)
+texture = ExtResource("9_keq14")
+
+[node name="moor" type="Sprite2D" parent="." unique_id=499407717]
+visible = false
+position = Vector2(547, 243)
+texture = ExtResource("17_lacnl")
+
+[node name="painting_portrait" type="Sprite2D" parent="." unique_id=1499947880]
+visible = false
+position = Vector2(313, 161)
+texture = ExtResource("18_3rfo7")
+
+[node name="painting_portrait_frame" type="Sprite2D" parent="." unique_id=843570381]
+position = Vector2(313, 161)
+texture = ExtResource("14_auerf")
+
+[node name="country_road" type="Sprite2D" parent="." unique_id=1981056657]
+visible = false
+position = Vector2(75, 102)
+texture = ExtResource("19_g5am4")
+
+[node name="country_road_frame" type="Sprite2D" parent="." unique_id=1137787006]
+position = Vector2(75, 102)
+texture = ExtResource("9_keq14")
+
+[node name="house_painting" type="Sprite2D" parent="." unique_id=1295154704]
+visible = false
+position = Vector2(71, 54)
+texture = ExtResource("20_ofwxd")
+
+[node name="house_painting_frame" type="Sprite2D" parent="." unique_id=1963654013]
+position = Vector2(70.00001, 45.000004)
+rotation = 1.5779436
+texture = ExtResource("16_lacnl")
+
+[node name="still_life" type="Sprite2D" parent="." unique_id=347774029]
+visible = false
+position = Vector2(76, 13)
+texture = ExtResource("21_yj31f")
+
+[node name="still_life_frame" type="Sprite2D" parent="." unique_id=2032395720]
+position = Vector2(76.00001, 13.000002)
+rotation = 1.5742924
+texture = ExtResource("11_nkiqn")
+
+[node name="boat" type="Sprite2D" parent="." unique_id=660400779]
+visible = false
+position = Vector2(76, 149)
+texture = ExtResource("22_85mmw")
+
+[node name="boat_frame" type="Sprite2D" parent="." unique_id=646596022]
+position = Vector2(76, 149)
+texture = ExtResource("9_keq14")
+
+[connection signal="body_entered" from="easel" to="easel" method="_on_body_entered"]
+[connection signal="body_exited" from="easel" to="easel" method="_on_body_exited"]
+[connection signal="pressed" from="CanvasLayer/Drawing_UI/close_button" to="CanvasLayer/Drawing_UI" method="_on_close_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Drawing_UI/submit_museum" to="CanvasLayer/Drawing_UI" method="_on_submit_museum_pressed"]
