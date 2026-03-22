@@ -6,20 +6,14 @@ var player_in_range_of_painting_one: bool = false
 var stolen_painting_scene = preload("res://scenes/mobs/stolen_painting.tscn")
 
 func _ready() -> void:
-	print("ready started")
 	$player_painting/player_drawing.texture = Gamemanager.player_drawing_one
-	print("texture set")
 	shader_material = $player_painting_sign/Sprite2D.material
-	print("shader set")
 	await get_tree().physics_frame
-	print("after physics frame")
 	$NavigationRegion2D.bake_navigation_polygon()
-	print("nav baked")
 	$Player/Player/Camera2D.zoom = Vector2(1.5, 1.5)
-	print("zoom set")
 	$Player/Player/Camera2D.make_current()
-	print("camera global pos: ", $Player/Player/Camera2D.global_position)
-	print("player global pos: ", $Player/Player.global_position)
+	await SceneTransistion.iris_open(10)
+
 	
 func _process(_delta):
 	if player_in_range_of_sign and Input.is_action_just_pressed("interact"):

@@ -18,6 +18,7 @@ config/features=PackedStringArray("4.6", "GL Compatibility")
 
 Gamemanager="*uid://dlafqdw5eb5w0"
 DialogueManager="*uid://c3rodes2l3gxb"
+SceneTransistion="*uid://cu7p4viaskwab"
 
 [display]
 

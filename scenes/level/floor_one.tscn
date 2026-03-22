@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bxccwnlsv37sa" path="res://assets/world/museumfloor.png" id="3_cdhq6"]
 [ext_resource type="Texture2D" uid="uid://cdagsgck04uij" path="res://assets/world/statue.png" id="4_ph1ls"]
 [ext_resource type="Texture2D" uid="uid://dqk6n88f8ceyi" path="res://assets/world/paintingframe.png" id="6_1485u"]
-[ext_resource type="Shader" path="res://assets/outline.gdshader" id="7_ewldt"]
+[ext_resource type="Shader" uid="uid://cg62wprjqj1xv" path="res://assets/outline.gdshader" id="7_ewldt"]
 [ext_resource type="Texture2D" uid="uid://mlhgr3mkyfg5" path="res://assets/world/lettere.png" id="8_8s7lg"]
 [ext_resource type="Texture2D" uid="uid://c5uxh7rdrpx6s" path="res://assets/world/sign.png" id="8_tbwm8"]
 [ext_resource type="Texture2D" uid="uid://bv8wq5kdu8s32" path="res://assets/world/fountain.png" id="10_8s7lg"]

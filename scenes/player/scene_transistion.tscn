@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://cu7p4viaskwab"]
+
+[ext_resource type="Shader" uid="uid://b2phe5whm3osu" path="res://assets/player/scene_transistion.gdshader" id="1_mauyl"]
+[ext_resource type="Script" uid="uid://dtpnciaqv5mmm" path="res://scripts/scene_transistion.gd" id="1_p7k5v"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p7k5v"]
+shader = ExtResource("1_mauyl")
+shader_parameter/center = Vector2(0.5, 0.5)
+shader_parameter/radius = 1.0
+shader_parameter/smoothness = 0.02
+shader_parameter/pixel_size = 8.0
+
+[node name="SceneTransistion" type="CanvasLayer" unique_id=1227029514]
+script = ExtResource("1_p7k5v")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1137486809]
+material = SubResource("ShaderMaterial_p7k5v")
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(15.96875, 9)
