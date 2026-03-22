@@ -5,8 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://b156telh6bhwe" path="res://scenes/player/player.tscn" id="2_cdhq6"]
 [ext_resource type="Texture2D" uid="uid://bxccwnlsv37sa" path="res://assets/world/museumfloor.png" id="3_cdhq6"]
 [ext_resource type="Texture2D" uid="uid://cdagsgck04uij" path="res://assets/world/statue.png" id="4_ph1ls"]
+[ext_resource type="Texture2D" uid="uid://c1x3lntnowc0h" path="res://assets/world/picture.png" id="5_gndb3"]
 [ext_resource type="Texture2D" uid="uid://dqk6n88f8ceyi" path="res://assets/world/paintingframe.png" id="6_1485u"]
-[ext_resource type="Shader" uid="uid://cg62wprjqj1xv" path="res://assets/outline.gdshader" id="7_ewldt"]
+[ext_resource type="Shader" path="res://assets/outline.gdshader" id="7_ewldt"]
 [ext_resource type="Texture2D" uid="uid://mlhgr3mkyfg5" path="res://assets/world/lettere.png" id="8_8s7lg"]
 [ext_resource type="Texture2D" uid="uid://c5uxh7rdrpx6s" path="res://assets/world/sign.png" id="8_tbwm8"]
 [ext_resource type="Texture2D" uid="uid://bv8wq5kdu8s32" path="res://assets/world/fountain.png" id="10_8s7lg"]
@@ -22,6 +23,9 @@
 [ext_resource type="Texture2D" uid="uid://crdlkw3fne3mi" path="res://assets/world/statue2.png" id="20_ly42n"]
 [ext_resource type="Texture2D" uid="uid://buaq7xfujdxn3" path="res://assets/world/moorishidol.png" id="21_ktd5f"]
 [ext_resource type="Texture2D" uid="uid://cpjdawn0465b2" path="res://assets/world/statuegoodest.png" id="22_ge8bx"]
+[ext_resource type="Texture2D" uid="uid://dkmq0tbj2yt2d" path="res://assets/world/Museum_paintings_frames/museumpaintings/nighttimecountryroad.png" id="24_j3q48"]
+[ext_resource type="Texture2D" uid="uid://b0dcwejs6eml8" path="res://assets/world/Museum_paintings_frames/museumpaintings/stilllife.png" id="25_n8kr0"]
+[ext_resource type="Texture2D" uid="uid://bbl4v7bwi1c3n" path="res://assets/world/Museum_paintings_frames/museumpaintings/boat.png" id="26_aucog"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_ewldt"]
 
@@ -264,6 +268,15 @@ shape = SubResource("RectangleShape2D_ktd5f")
 position = Vector2(-804, -30.75)
 shape = SubResource("RectangleShape2D_gndb3")
 
+[node name="Picture" type="Sprite2D" parent="StaticBody2D" unique_id=196238066]
+position = Vector2(576, -210)
+rotation = 1.5707964
+texture = ExtResource("5_gndb3")
+
+[node name="Painting2Frame" type="Sprite2D" parent="StaticBody2D" unique_id=1212568666]
+position = Vector2(585, -211)
+texture = ExtResource("17_p5g4h")
+
 [node name="Statue" type="Sprite2D" parent="." unique_id=1143560907]
 z_index = 1
 position = Vector2(-338, -326)
@@ -436,6 +449,32 @@ texture = ExtResource("11_wle02")
 z_index = 1
 position = Vector2(-804, -43)
 texture = ExtResource("22_ge8bx")
+
+[node name="Nighttimecountryroad" type="Sprite2D" parent="." unique_id=197138876]
+position = Vector2(304, -299)
+texture = ExtResource("24_j3q48")
+
+[node name="32x32Frame3" type="Sprite2D" parent="." unique_id=1700008383]
+position = Vector2(304, -299)
+texture = ExtResource("11_wle02")
+
+[node name="Stilllife" type="Sprite2D" parent="." unique_id=1136134205]
+position = Vector2(578, -48)
+rotation = 1.5707964
+texture = ExtResource("25_n8kr0")
+
+[node name="PortraitFrame2" type="Sprite2D" parent="." unique_id=1811733068]
+position = Vector2(578, -48)
+texture = ExtResource("13_bn3ch")
+
+[node name="Boat" type="Sprite2D" parent="." unique_id=1960488229]
+position = Vector2(404, 63)
+rotation = 3.1415927
+texture = ExtResource("26_aucog")
+
+[node name="32x32Frame4" type="Sprite2D" parent="." unique_id=209566184]
+position = Vector2(404, 63)
+texture = ExtResource("11_wle02")
 
 [connection signal="body_entered" from="player_painting" to="." method="_on_player_painting_body_entered"]
 [connection signal="body_exited" from="player_painting" to="." method="_on_player_painting_body_exited"]
