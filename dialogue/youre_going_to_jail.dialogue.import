@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dp0qgjjgxr4q6"
+path="res://.godot/imported/youre_going_to_jail.dialogue-2777031a2c59dd4916bf8d7a2577ad93.tres"
+
+[deps]
+
+source_file="res://dialogue/youre_going_to_jail.dialogue"
+dest_files=["res://.godot/imported/youre_going_to_jail.dialogue-2777031a2c59dd4916bf8d7a2577ad93.tres"]
+
+[params]
+
+defaults=true

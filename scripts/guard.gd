@@ -26,6 +26,8 @@ func _ready():
 		get_node("../../patrol3").global_position,
 		get_node("../../patrol4").global_position
 	]
+	await get_tree().physics_frame
+	$Area2D.body_entered.connect(_on_area_2d_body_entered)
 
 func _physics_process(delta):
 	if player and Gamemanager.stolen_painting:
@@ -88,7 +90,19 @@ func _on_detect_radius_body_entered(body: Node2D) -> void:
 		await $Timer.timeout
 		$exclamation.visible = false
 		
-
 func _on_detect_radius_body_exited(body: Node2D) -> void:
 	if body.name == "Player":
 		player = null
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if Gamemanager.first_time_in_museum:
+		Gamemanager.player_movable = false
+		DialogueManager.show_example_dialogue_balloon(load("res://dialogue/caught_in_museum_first_time.dialogue"), "start")
+		await DialogueManager.dialogue_ended
+		Gamemanager.load_level(5, $"../../Player/Player".global_position)
+	elif Gamemanager.stolen_painting:
+		Gamemanager.player_movable = false
+		DialogueManager.show_example_dialogue_balloon(load("res://dialogue/youre_going_to_jail.dialogue"), "start")
+		await DialogueManager.dialogue_ended
+		#load Jail level
+		#Gamemanager.load_level(5, $"../../Player/Player".global_position)

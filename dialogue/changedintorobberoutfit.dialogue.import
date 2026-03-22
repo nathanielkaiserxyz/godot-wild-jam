@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dy4tnf4t8aodb"
+path="res://.godot/imported/changedintorobberoutfit.dialogue-0239e0213186f60ba9db27aa0fc6cd51.tres"
+
+[deps]
+
+source_file="res://dialogue/changedintorobberoutfit.dialogue"
+dest_files=["res://.godot/imported/changedintorobberoutfit.dialogue-0239e0213186f60ba9db27aa0fc6cd51.tres"]
+
+[params]
+
+defaults=true

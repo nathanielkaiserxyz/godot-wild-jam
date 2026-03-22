@@ -13,17 +13,21 @@ func _ready() -> void:
 	$Player/Player/Camera2D.zoom = Vector2(1.5, 1.5)
 	$Player/Player/Camera2D.make_current()
 
-	
 func _process(_delta):
 	if player_in_range_of_sign and Input.is_action_just_pressed("interact"):
 		$player_painting_sign/player_sign.visible = true
 		Gamemanager.player_movable = false
+		
 	if player_in_range_of_sign:
 		$player_painting_sign/Sprite2D.material = shader_material
 	else:
 		$player_painting_sign/Sprite2D.material = null
-	
-	if player_in_range_of_painting_one and Input.is_action_just_pressed("interact") and !Gamemanager.stolen_painting:
+		
+	if player_in_range_of_painting_one and Input.is_action_just_pressed("interact") and Gamemanager.first_time_in_museum:
+		Gamemanager.player_movable = false
+		Gamemanager.stolen_painting = true
+	#second time in the museum
+	elif player_in_range_of_painting_one and Input.is_action_just_pressed("interact") and !Gamemanager.stolen_painting:
 		$player_painting/player_drawing.visible = false
 		Gamemanager.stolen_painting = true
 		var painting = stolen_painting_scene.instantiate()

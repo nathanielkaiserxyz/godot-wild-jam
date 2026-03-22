@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://c0ujko80m3wfo"
+path="res://.godot/imported/back_in_the_apartment.dialogue-aef558636ddb85d60013b86bc5e58281.tres"
+
+[deps]
+
+source_file="res://dialogue/back_in_the_apartment.dialogue"
+dest_files=["res://.godot/imported/back_in_the_apartment.dialogue-aef558636ddb85d60013b86bc5e58281.tres"]
+
+[params]
+
+defaults=true

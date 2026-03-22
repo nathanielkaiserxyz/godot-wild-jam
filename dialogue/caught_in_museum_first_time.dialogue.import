@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://drsis516j7g3j"
+path="res://.godot/imported/caught_in_museum_first_time.dialogue-610c245bbeb9e2fa1abcebdfcc4ced2d.tres"
+
+[deps]
+
+source_file="res://dialogue/caught_in_museum_first_time.dialogue"
+dest_files=["res://.godot/imported/caught_in_museum_first_time.dialogue-610c245bbeb9e2fa1abcebdfcc4ced2d.tres"]
+
+[params]
+
+defaults=true

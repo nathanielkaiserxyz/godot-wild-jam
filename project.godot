@@ -31,6 +31,10 @@ window/stretch/scale_mode="integer"
 
 enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
 
+[global_group]
+
+player=""
+
 [input]
 
 ui_select={
@@ -79,7 +83,7 @@ interact={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://dialogue/first-room.dialogue", "res://dialogue/get-them-back.dialogue", "res://dialogue/guard_outside_museum.dialogue", "res://dialogue/closednewspaper.dialogue", "res://dialogue/openingscene.dialogue", "res://dialogue/gossipwhenpanstopainting.dialogue")
+locale/translations_pot_files=PackedStringArray("res://dialogue/first-room.dialogue", "res://dialogue/get-them-back.dialogue", "res://dialogue/guard_outside_museum.dialogue", "res://dialogue/closednewspaper.dialogue", "res://dialogue/openingscene.dialogue", "res://dialogue/gossipwhenpanstopainting.dialogue", "res://dialogue/caught_in_museum_first_time.dialogue", "res://dialogue/youre_going_to_jail.dialogue", "res://dialogue/back_in_the_apartment.dialogue", "res://dialogue/changedintorobberoutfit.dialogue")
 
 [physics]
 
