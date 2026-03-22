@@ -7,7 +7,7 @@ var shader_material: ShaderMaterial
 
 func _ready():
 	shader_material = $easel.material
-	await SceneTransistion.iris_open(10)
+s	await SceneTransistion.iris_open(10)
 
 func _on_body_entered(body):
 	if body.name == "Player": 
