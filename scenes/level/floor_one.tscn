@@ -26,6 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://dkmq0tbj2yt2d" path="res://assets/world/Museum_paintings_frames/museumpaintings/nighttimecountryroad.png" id="24_j3q48"]
 [ext_resource type="Texture2D" uid="uid://b0dcwejs6eml8" path="res://assets/world/Museum_paintings_frames/museumpaintings/stilllife.png" id="25_n8kr0"]
 [ext_resource type="Texture2D" uid="uid://bbl4v7bwi1c3n" path="res://assets/world/Museum_paintings_frames/museumpaintings/boat.png" id="26_aucog"]
+[ext_resource type="Texture2D" uid="uid://d2ldagvxar68e" path="res://assets/world/statuealien.png" id="27_n8kr0"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_ewldt"]
 
@@ -174,6 +175,9 @@ size = Vector2(15, 13)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gndb3"]
 size = Vector2(16, 14.5)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n8kr0"]
+size = Vector2(30, 20)
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ewldt"]
 shader = ExtResource("7_ewldt")
 shader_parameter/outline_color = Color(1, 1, 1, 1)
@@ -276,6 +280,10 @@ texture = ExtResource("5_gndb3")
 [node name="Painting2Frame" type="Sprite2D" parent="StaticBody2D" unique_id=1212568666]
 position = Vector2(585, -211)
 texture = ExtResource("17_p5g4h")
+
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="StaticBody2D" unique_id=991930036]
+position = Vector2(-914, -110)
+shape = SubResource("RectangleShape2D_n8kr0")
 
 [node name="Statue" type="Sprite2D" parent="." unique_id=1143560907]
 z_index = 1
@@ -475,6 +483,10 @@ texture = ExtResource("26_aucog")
 [node name="32x32Frame4" type="Sprite2D" parent="." unique_id=209566184]
 position = Vector2(404, 63)
 texture = ExtResource("11_wle02")
+
+[node name="Statuealien" type="Sprite2D" parent="." unique_id=736072583]
+position = Vector2(-914, -133)
+texture = ExtResource("27_n8kr0")
 
 [connection signal="body_entered" from="player_painting" to="." method="_on_player_painting_body_entered"]
 [connection signal="body_exited" from="player_painting" to="." method="_on_player_painting_body_exited"]
