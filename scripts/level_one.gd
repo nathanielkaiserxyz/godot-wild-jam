@@ -24,7 +24,7 @@ func _process(_delta):
 	else:
 		$player_painting_sign/Sprite2D.material = null
 	
-	if player_in_range_of_painting_one and Input.is_action_just_pressed("interact"):
+	if player_in_range_of_painting_one and Input.is_action_just_pressed("interact") and !Gamemanager.stolen_painting:
 		$player_painting/player_drawing.visible = false
 		Gamemanager.stolen_painting = true
 		var painting = stolen_painting_scene.instantiate()
@@ -61,9 +61,10 @@ func _on_player_painting_body_exited(body: Node2D) -> void:
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if !Gamemanager.top_left and body.name == "Player":
 		var player = get_node("Player/Player")
-		player.move_camera_to($top_left_cutscene)
-		Gamemanager.top_left = true
 		Gamemanager.player_movable = false
+		await player.move_camera_to($top_left_cutscene)
+		Gamemanager.top_left = true
+		
 		DialogueManager.show_example_dialogue_balloon(load("res://dialogue/gossipwhenpanstopainting.dialogue"), "start")
 		await DialogueManager.dialogue_ended
 		await player.move_camera_to($Player/Player)
