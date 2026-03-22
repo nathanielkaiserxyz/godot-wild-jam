@@ -12,7 +12,7 @@ func _ready() -> void:
 	$NavigationRegion2D.bake_navigation_polygon()
 	$Player/Player/Camera2D.zoom = Vector2(1.5, 1.5)
 	$Player/Player/Camera2D.make_current()
-	await SceneTransistion.iris_open(10)
+	#await SceneTransistion.iris_open(10)
 
 	
 func _process(_delta):
