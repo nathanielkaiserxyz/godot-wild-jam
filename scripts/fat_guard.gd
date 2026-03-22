@@ -11,12 +11,10 @@ func _ready() -> void:
 func _on_body_entered(body):
 	if body.name == "Player": 
 		player_in_range = true
-		print("true")
 
 func _on_body_exited(body):
 	if body.name == "Player":
 		player_in_range = false
-		print("false")
 
 func _process(_delta):
 	if player_in_range and Input.is_action_just_pressed("interact") and !player_in_dialogue:

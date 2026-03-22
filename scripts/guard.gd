@@ -52,6 +52,7 @@ func _physics_process(delta):
 		var next_point = nav_agent.get_next_path_position()
 		velocity = global_position.direction_to(next_point) * patrol_speed
 	move_and_slide()
+	
 	var direction = velocity.normalized()
 	if direction != Vector2.ZERO:
 			if abs(direction.x) > abs(direction.y):

@@ -12,7 +12,6 @@ func _ready() -> void:
 	$NavigationRegion2D.bake_navigation_polygon()
 	$Player/Player/Camera2D.zoom = Vector2(1.5, 1.5)
 	$Player/Player/Camera2D.make_current()
-	#await SceneTransistion.iris_open(10)
 
 	
 func _process(_delta):
@@ -64,7 +63,6 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		Gamemanager.player_movable = false
 		await player.move_camera_to($top_left_cutscene)
 		Gamemanager.top_left = true
-		
 		DialogueManager.show_example_dialogue_balloon(load("res://dialogue/gossipwhenpanstopainting.dialogue"), "start")
 		await DialogueManager.dialogue_ended
 		await player.move_camera_to($Player/Player)

@@ -22,6 +22,10 @@ var levels = [
 	"res://scenes/level/options.tscn",
 ]
 
-func load_level(index: int):
+func load_level(index: int, from_position: Vector2 = Vector2.ZERO):
 	if index < levels.size():
+		Gamemanager.player_movable = false
+		await SceneTransistion.iris_close(from_position)
 		get_tree().call_deferred("change_scene_to_file", levels[index])
+		await SceneTransistion.iris_open()
+		Gamemanager.player_movable = true

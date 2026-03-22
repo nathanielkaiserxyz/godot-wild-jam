@@ -7,7 +7,6 @@ var shader_material: ShaderMaterial
 
 func _ready():
 	shader_material = $easel.material
-	#await SceneTransistion.iris_open(10)
 
 func _on_body_entered(body):
 	if body.name == "Player": 
@@ -39,8 +38,7 @@ func open_drawing_screen():
 
 func _on_leave_body_entered(_body: Node2D) -> void:
 	if get_node("../leave").visible == true:
-		#await SceneTransistion.iris_close($"../Player/Player".global_position, .8)
-		Gamemanager.load_level(1)
+		Gamemanager.load_level(1, $"../Player/Player".global_position)
 		
 func _on_close_paper_pressed() -> void:
 	get_node("../newspaper").visible = false

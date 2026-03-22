@@ -65,7 +65,7 @@ position = Vector2(234, 101)
 scale = Vector2(2.4400027, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="leave" unique_id=1541774428]
-position = Vector2(0, -0.5)
+position = Vector2(-0.4098356, 7)
 shape = SubResource("RectangleShape2D_cplf4")
 
 [connection signal="body_entered" from="leave" to="." method="_on_leave_body_entered"]

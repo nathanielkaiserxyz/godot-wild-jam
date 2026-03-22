@@ -12,7 +12,7 @@ func _process(_delta: float) -> void:
 
 
 func _on_start_pressed() -> void:
-	Gamemanager.load_level(0)
+	Gamemanager.load_level(0, $scene.global_position)
 	
 
 func _on_options_pressed() -> void:
