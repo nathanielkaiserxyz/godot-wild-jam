@@ -5,6 +5,7 @@ var run_speed = 100.0
 var patrol_speed = 30.0
 
 @onready var nav_agent = $NavigationAgent2D
+@onready var animate = $AnimatedSprite2D
 var update_path_timer := 0.0
 
 var patrol_counter = 0
@@ -51,6 +52,23 @@ func _physics_process(delta):
 		var next_point = nav_agent.get_next_path_position()
 		velocity = global_position.direction_to(next_point) * patrol_speed
 	move_and_slide()
+	var direction = velocity.normalized()
+	if direction != Vector2.ZERO:
+			if abs(direction.x) > abs(direction.y):
+				animate.play("run")
+
+				if direction.x > 0:
+					animate.flip_h = false
+				else:
+					animate.flip_h = true
+
+			else:
+				if direction.y > 0:
+					animate.play("done")
+				else:
+					animate.play("up")
+	else:
+		animate.play("idle")
 
 func _next_patrol_point():
 	await get_tree().create_timer(1.0).timeout
